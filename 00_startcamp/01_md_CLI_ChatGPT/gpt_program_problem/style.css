@@ -1,0 +1,139 @@
+:root {
+  --color-primary: skyblue;
+  --color-primary-light: skyblue;
+  --color-secondary: skyblue;
+  --color-chat: #e6f3f6;
+  --color-white: #f9fbff;
+  --color-text: #595959;
+  --color-gray: #aab5b5;
+}
+
+/** 
+  실습에 사용되는 클래스 
+*/
+
+/* 채팅 영역 */
+.chat-area {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  background-color: var(--color-chat);
+  padding: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.chat-area::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-light);
+  border-radius: 10px;
+}
+
+/* 전송, 수신 채팅 공통 */
+.chat {
+  border-radius: 30px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  color: var(--color-white);
+  width: fit-content;
+  max-width: 70%;
+  height: fit-content;
+  word-break: break-all;
+  margin: 5px 0;
+}
+
+/* 전송한 채팅 */
+.send-chat {
+  background-color: var(--color-primary);
+  align-self: flex-end;
+}
+
+/* 수신한 채팅 */
+.receive-chat {
+  background-color: var(--color-gray);
+}
+
+/* 채팅 입력 iuput */
+.chat-input {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.chat-input:focus {
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: var(--color-secondary);
+}
+
+/** 
+  그 외
+*/
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary) 100%,
+    var(--color-white) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 1280px;
+  min-height: 576px;
+}
+
+/* 프로필, 채팅, 입력창을 담는 컨테이너 */
+.container {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+
+.profile-area {
+  display: flex;
+  align-items: center;
+}
+
+
+.profile-area > span {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: semi-bold;
+  color: var(--color-text);
+}
+
+/* 입력창, 툴 */
+.bottom-area {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* 프로필, 입력창의 툴 */
+.tool-area {
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary);
+}
