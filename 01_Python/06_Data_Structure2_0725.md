@@ -30,7 +30,7 @@
 |D.values()|딕셔너리 D의 value를 모은 객체를 반환|
 |D.items()|딕셔너리 D의 key/value 쌍을 모은 객체를 반환|
 |D.pop(k *[,default]*)|딕셔너리 D에서 k를 제거하고 value 값을 반환<br>(key가 없으면 error나 defalut값을 반환)|
-|D.setdefault(k *[,default]*)|딕셔너리 D에서 k의 value를 반환<br>(k가 D의 key가 아니면 k/None(default) 쌍을 D에 추가하고 v를 반환)|
+|D.setdefault(k *[,default]*)|딕셔너리 D에서 k의 value를 반환<br>(k가 D의 key가 아니면 k/None(default) 쌍을 D에 추가하고 value를 반환)|
 |D.update(*[other]*)|other에 있는 각 key에 대해<br>D에 있는 key면 D의 key값(value)를 other의 value로 대체,<br>D에 없는 key면 key/value 쌍을 D에 추가|
 ```python
 # [], .get(), .setdeafault()
