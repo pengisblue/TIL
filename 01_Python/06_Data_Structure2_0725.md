@@ -16,9 +16,9 @@
 |:--:|:--:|:--:|
 |set1.difference(set2)|set1 차집합 set2의 항목으로<br>세트를 생성 후 반환|set1 - set2|
 |set1.intersection(set2)|set1와 set2의 교집합으로<br>세트를 생성 후 반환| set1 & set2|
+|set1.union(set2)|set1와 set2의 합집합으로<br>세트를 생성 후 반환|set1 \| set2|
 |set1.issubset(set2)|set1가 set2의 부분집합이면<br>True를 반환|set1 <= set2|
 |set1.issuperset(set2)|set1가 set2의 포함집합이면<br>True를 반환|set1 >= set2|
-|set1.union(set2)|set1와 set2의 합집합으로<br>세트를 생성 후 반환|set1 \| set2|
 
 ### 2. dictionay
 #### 메서드
