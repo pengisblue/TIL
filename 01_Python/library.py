@@ -5,7 +5,7 @@ class Pokemon:
 
     def __init__(self):
         self.skill_1 = '몸통박치기'
-        Pokemon.increase_number
+        Pokemon.increase_number()
 
     # 모든 포켓몬은, 공격이라는 행위
     def attack(self):
