@@ -27,7 +27,7 @@ for tc in range(1, T+1):
     for k in range(2):
         tmp = 0
         for i in range(100):
-            tmp += arr[i + (99-2*i)*k][i + (99-2*i)*k]
+            tmp += arr[i][i + (99-2*i)*k]
         if max_v < tmp:
             max_v = tmp
 
