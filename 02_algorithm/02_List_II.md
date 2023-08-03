@@ -240,4 +240,72 @@ print(arr)  # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     - 1 << 3 == 1000 (1을 3번 옮김) 1000(2) = 2^3
 ### & 연산자
 - i & (1 << j): i의 j번째 비트가 1인지 아닌지를 검사한다
-### 부분집합 합 문제
+### 모든 부분집합 구하기
+```python
+arr = [3, 6, 7, 1, 5, 4]
+n = len(arr)
+for i in range(1<<n):
+    for j in range(n):
+        if i & (1<<j):
+            print(arr[j], end=', ')
+    print()
+print()
+```
+
+## 검색 search
+### 순차 검색(Sequential Search)
+- 순서대로 검색
+- 구현이 쉽지만 검색 대상이 많아지면 수행시간 증가
+    - 비효율적
+### 이진 검색(Binary Search)
+> 자료의 가운데 항목의 키 값과 비교하여 다음 검색의 위치를 정하고 검색을 계속 진행
+1. 자료의 중앙에 있는 원소를 고른다
+2. 중앙 원소 값과 목표 값을 비교한다
+3. 목표 값이 중앙 원소 값보다 작으면 자료의 왼쪽 반에 대해서 새로 검색,<br/>
+    크다면 자료의 오른쪽 반에 대해서 새로 검색
+4. 찾고자 하는 값을 찾을 때 까지 반복
+    ```python
+    def binarySearch(a, N, key):
+        start = 0
+        end = N - 1
+        while start <= end:
+            middle = (start + end)//2
+            if a[middle] == key:
+                return true
+            elif a[middle] > key:
+                end = middle - 1
+            else:
+                start = middle + 1
+        return false
+    ```
+```python
+# arr: 원본 배열
+# N: 배열의 길이
+# key: 타겟
+def binary_search(arr, N, key):
+    start = 0
+    end = N-1  # 끝 인덱스
+    while start <= end:  # 시작지점이 끝지점보다 작거나 같은 동안
+        mid = (start + end) // 2 # 중앙 인덱스
+        # 중앙 위치가 내가 찾는 대상이라면
+        if arr[mid] == key:
+            return True
+        # 아닌데, 중앙 위치 값이 내 키 값보다 크면
+        elif arr[mid] > key:
+            end = mid -1
+        # 아닌데, 중앙 위치 값이 내 키 값보다 작으면
+        else:
+            start = mid + 1
+    return False
+```
+### 선택 정렬(Selection Sort)
+> 주어진 자료들 중 가장 작은 값의 원소부터 차례대로 선택하여 위치를 비교하는 방식
+```python
+def selectionSort(a, N):
+    for i in range(N-1):
+        min_idx = i
+        for j in range(i+1, N):
+            if a[min_idx] > a[j]:
+                min_idx = j
+        a[i], a[min_idx] = a[min_idx], a[i]
+```
