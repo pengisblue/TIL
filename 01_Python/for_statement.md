@@ -136,3 +136,22 @@ for i in arr:       # 배열 안의 리스트를 순서대로 반환 [[여, 기]
     4
     '''
 ```
+```python
+# 연산
+
+for i in range(len(arr)):
+    for j in range(len(arr)):   # 반복의 첫 번째 값
+        print(i)                # 0
+        print(i + 1)            # 1
+        print(j)                # 0
+        print(j + 1)            # 1
+
+for i in arr:
+    for j in i:         # 반복의 첫 번째 값
+        print(i)        # ['one', 'two', 'three', 'four']
+        print(i + 1)    # TypeError: can only concatenate list (not "int") to list 
+                            # 'i'는 리스트라 '1'을 더할 수 없음
+        print(j)        # one
+        print(j + 1)    # TypeError: can only concatenate str (not "int") to str
+                            # 'j'는 문자열이라 '1'을 더할 수 없음
+```
