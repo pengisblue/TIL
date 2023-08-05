@@ -20,3 +20,4 @@ for tc in range(1, T+1):
                 max_sum = interval
     result = max_sum - min_sum
     print(f'#{tc} {result}')
+

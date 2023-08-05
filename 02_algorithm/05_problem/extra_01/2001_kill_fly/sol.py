@@ -11,7 +11,7 @@ for tc in range(1, T+1):
             tmp = 0     # 죽은 파리 임시변수
             for k in range(M):
                 for l in range(M):
-                    if 0 <= i+k < N and 0 <= j+l < N:
+                    if i+k < N and j+l < N:
                         tmp += flys[i+k][j+l]
             if kill < tmp:
                 kill = tmp
