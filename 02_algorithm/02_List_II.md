@@ -229,6 +229,8 @@ for i in range(3):
             arr[i][j], arr[j][i] = arr[j][i], arr[i][j]  # arr[i][j]<->arr[j][i]
 print(arr)  # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
+
+# 8/4 강의
 ## 비트연산자
 - & : 비트 단위로 and 연산을 한다
 - | : 비트 단위로 or 연산을 한다
