@@ -44,3 +44,27 @@ else:
 ### 문자열 숫자를 정수로 변환하기
 
 ### 문자열을 숫자를 정수로 변환하기
+
+## 패턴 매칭
+### 고지식한 패턴 검색 알고리즘(Brute Force)
+```python
+p = 'is'    # 찾을 패턴
+t = 'This is a book'    # 전체 텍스트
+M = len(p)      # 찾을 패턴의 길이
+N = len(t)      # 전체 텍스트의 길이
+
+def BruteForce(p, t):
+    i = 0   # index t(찾을)
+    j = 0   # index p(전체)
+    while j < M and i < N:
+        if t[i] != p[j]:
+            i = i - j
+            j = -1
+        i = i + 1
+        j = j + 1
+    if j == M: return i - M     # 검색 성공
+    else: return -1             # 검색 실패
+```
+### KMP 알고리즘
+
+### 보이어-무어 알고리즘
