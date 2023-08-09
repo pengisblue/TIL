@@ -1,18 +1,19 @@
 import sys
 sys.stdin = open('input.txt')
 
+
 def check(stack, text):
-    if text == '(' or text == '{':
+    if text == '(' or text == '{':      # 열린괄호이면 추가
         stack.append(text)
         return True
-    elif text == ')':
-        if stack and stack[-1] == '(':
+    elif text == ')':       # 닫힌 괄호일 때
+        if stack and stack[-1] == '(':  # 짝이 맞으면 pop
             stack.pop()
             return True
         else:
             return False
-    elif text == '}':
-        if stack and stack[-1] == '{':
+    elif text == '}':       # 닫힌 괄호일 때
+        if stack and stack[-1] == '{':  # 짝이 맞으면 pop
             stack.pop()
             return True
         else:
@@ -27,7 +28,7 @@ for tc in range(1, T+1):
     stack = []
     result = 1
     for i in range(len(texts)):
-        if not check(stack, texts[i]):
+        if not check(stack, texts[i]):  # '(' -> '}' / 닫힌 괄호가 왔는데 빈 리스트
             result = 0
             break
     if stack:
