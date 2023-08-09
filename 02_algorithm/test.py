@@ -1,16 +1,12 @@
-p = 'is'    # 찾을 패턴
-t = 'This is a book'    # 전체 텍스트
-M = len(p)      # 찾을 패턴의 길이
-N = len(t)      # 전체 텍스트의 길이
+def fibo(n):
+    global memo
+    if n >= 2 and memo[n] == 0:
+        memo[n] = (fibo(n-1) + fibo(n-2))
+    return memo[n]
+n = 0
+memo = [0] * (n+1)
+memo[0] = 0
+memo[1] = 1
 
-def BruteForce(p, t):
-    i = 0   # index t(찾을)
-    j = 0   # index p(전체)
-    while j < M and i < N:
-        if t[i] != p[j]:
-            i = i - j
-            j = -1
-        i = i + 1
-        j = j + 1
-    if j == M: return i - M     # 검색 성공
-    else: return -1             # 검색 실패
+print(fibo(0))
+print(memo)
