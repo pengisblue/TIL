@@ -221,7 +221,7 @@ def DFS(node):
         # 다음 조사 가능 여부
         if matrix[node][next] == 1 and visited[next] == 0:
             DFS(next)
-
+        # else -> 이전 DFS(node)로 돌아감
 
 # V = node의 개수
 # E = Edge 간선의 개수
@@ -239,16 +239,6 @@ for i in range(0, E * 2, 2):
     # print(i, i+1, data[i], data[i+1])
     matrix[data[i]][data[i + 1]] = 1
     matrix[data[i + 1]][data[i]] = 1
-    '''
-    matrix[1][2] = 1
-    matrix[2][1] = 1
 
-    matrix[data[0]][data[1]] = 1
-    matrix[data[1]][data[0]] = 1
-
-    matrix[data[2]][data[3]] = 1
-    matrix[data[3]][data[2]] = 1
-    '''
-
-DFS(1)
+DFS(1)  # 1 2 4 6 5 7 3
 ```
