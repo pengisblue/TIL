@@ -22,7 +22,6 @@ def dfs():
 for _ in range(1, 11):
     tc, E = map(int, input().split())
     arr = list(map(int, input().split()))
-    print(arr)
     matrix = [[0]*100 for _ in range(2)]    # 정점의 개수가 최대 100개이고, 선택지는 2가지를 넘지 않음
     for i in range(0, E*2, 2):
         if matrix[0][arr[i]] == 0:  # arr[i] 정점에서 다음 정점 기록이 없을 때
