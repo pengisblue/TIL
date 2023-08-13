@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55830efd-4db0-44f9-b385-ee9483cd23b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../01_List_I/4835_sumofintervals/sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../01_List_I/4835_sumofintervals/sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/11092.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/sample_input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/sample_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/11092/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/9836.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/input1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/output1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_List_I/9836/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/16268_balloon2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16268_balloon2/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/16910_point_in_circle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16910_point_in_circle/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/1979_crossword_puzzle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1979_crossword_puzzle/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/2001_kill_fly.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2001_kill_fly/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/5789_switch_box.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5789_switch_box/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/6019_fly_between_trains.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6019_fly_between_trains/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/6485_samsungbus.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6485_samsungbus/sol2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/9489_ruins.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/input1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/output1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/sol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9489_ruins/sol2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/9490_balloon.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/input1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/output1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../9490_balloon/sol.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2TXxqy3JnNsMZQlsvGFCj88nLZ4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="sol" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="1989_palindrome" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sol.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sol" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55830efd-4db0-44f9-b385-ee9483cd23b1" name="Default Changelist" comment="" />
+      <created>1691203423934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691203423934</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt')
+sys.stdin = open('input1.txt')
 
 T = int(input())
 for tc in range(1, T+1):
@@ -10,10 +10,12 @@ for tc in range(1, T+1):
     max_v = 0
     for i in range(N):
         for j in range(M):
-            sum_v = matrix[i][j]
+            A = matrix[i][j]
+            sum_v = A
             for k in range(4):
-                if 0 <= i + di[k] < N and 0 <= j + dj[k] < M:
-                    sum_v += matrix[i+di[k]][j+dj[k]]
+                for l in range(1, A+1):
+                    if 0 <= i + l * di[k] < N and 0 <= j + l * dj[k] < M:
+                        sum_v += matrix[i + l*di[k]][j + l*dj[k]]
             if max_v < sum_v:
                 max_v = sum_v
 
