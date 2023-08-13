@@ -82,7 +82,7 @@ def fibo(n):
         memo[n] = (fibo(n-1) + fibo(n-2))
     return memo[n]
 
-n = 10
+n = int(input())
 memo = [0] * (n+1)
 memo[0] = 0
 memo[1] = 1
@@ -241,4 +241,35 @@ for i in range(0, E * 2, 2):
     matrix[data[i + 1]][data[i]] = 1
 
 DFS(1)  # 1 2 4 6 5 7 3
+```
+
+# resume
+## stack
+- 물건을 쌓아 올리듯 자료를 쌓아 올린 형태의 자료구조
+- 스택에 저장된 자료는 선형 구조를 가진다
+- 후입선출의 방식으로 자료를 꺼낸다
+- 스택에서 마지막 삽입된 원소의 위치를 top라 부른다
+## DFS(깊이우선탐색)
+시작 정점의 한 방향으로 갈 수 있는 경로가 있는 곳까지 깊이 탐색해 가다가<br/>
+더 이상 갈 곳이 없게 되면, 가장 마지막에 만났던 갈림길의 정점으로 되돌아가서<br/>
+다른 방향의 정점으로 탐색을 반복하여 모든 정점을 방문하는 순회 방법
+```python
+graph = [[], [2, 3], [4, 5], [7], [6], [6], [7]]
+
+def dfs(V, start):      # 정점의 개수, 시작점
+    stack = []
+    visited = [0] * (V+1)
+    visited[start] = 1      # 방문 표시
+    while True:
+        for link in graph[start]:
+            if visited[link] == 0:
+                stack.append(start)     # 탐색할 곳으로 스택
+                start = link    # 다음 깊이로 탐색할 정점 변경
+                visited[start] = 1
+                break   # 다음 깊이를 탐색하기위해 break
+        else:   # 모든 간선을 방문해서 더 탐색할 곳이 없을 때
+            if stack:   # 더 탐색해야할 정점이 남아있으면,
+                start = stack.pop()     # 다른 간선을 찾기 위해 pop()
+            else:
+                break   # 탐색 끝
 ```
