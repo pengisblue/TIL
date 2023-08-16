@@ -26,6 +26,9 @@ def win(idx1, idx2):
         else:
             return idx1
 
+    # winner = (player[left] - player[right]) % 3
+    # if winner == 2
+
 
 # 가위바위보 할 사람 구하기
 def game(front, back):  # 리스트의 인덱스를 인자로 받는다
