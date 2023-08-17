@@ -13,4 +13,5 @@ for _ in range(10):
         numbers.append(num)     # 맨 뒤에 다시 추가
         if num == 0:    # 반복 종료 조건
             break
+            
     print(f'#{tc}', *numbers)
