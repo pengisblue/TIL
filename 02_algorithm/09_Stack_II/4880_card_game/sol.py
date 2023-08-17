@@ -4,30 +4,32 @@ sys.stdin = open('input.txt')
 
 # 가위바위보 승자 구하기  승자의 인덱스를 리턴
 def win(idx1, idx2):
-    if card_nums[idx1] == '1':
-        if card_nums[idx2] == '1':
-            return idx1
-        elif card_nums[idx2] == '2':
-            return idx2
-        else:
-            return idx1
-    elif card_nums[idx1] == '2':
-        if card_nums[idx2] == '1':
-            return idx1
-        elif card_nums[idx2] == '2':
-            return idx1
-        else:
-            return idx2
+    result = (int(card_nums[idx1])-int(card_nums[idx2])) % 3
+    if result == 2:
+        return idx2
     else:
-        if card_nums[idx2] == '1':
-            return idx2
-        elif card_nums[idx2] == '2':
-            return idx1
-        else:
-            return idx1
-
-    # winner = (player[left] - player[right]) % 3
-    # if winner == 2
+        return idx1
+    # if card_nums[idx1] == '1':
+    #     if card_nums[idx2] == '1':
+    #         return idx1
+    #     elif card_nums[idx2] == '2':
+    #         return idx2
+    #     else:
+    #         return idx1
+    # elif card_nums[idx1] == '2':
+    #     if card_nums[idx2] == '1':
+    #         return idx1
+    #     elif card_nums[idx2] == '2':
+    #         return idx1
+    #     else:
+    #         return idx2
+    # else:
+    #     if card_nums[idx2] == '1':
+    #         return idx2
+    #     elif card_nums[idx2] == '2':
+    #         return idx1
+    #     else:
+    #         return idx1
 
 
 # 가위바위보 할 사람 구하기
