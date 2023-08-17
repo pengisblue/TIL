@@ -13,19 +13,16 @@ for tc in range(1, T+1):
         queue.append([pizza, cheese.pop(0)])
         pizza += 1
         # print(queue)
-    while cheese:   # 모든 피자를 화덕에 넣을 때 까지
-        check = queue.popleft()     # 치즈가 녹았는지 확인하는 작업
-        if check[1]//2 == 0:    # 치즈가 다 녹았다면
-            queue.append([pizza, cheese.pop(0)])    # 새로운 피자를 넣어준다
-            pizza += 1
-        else:
-            check[1] //= 2      # 치즈의 양을 반으로 줄이고
-            queue.append(check)     # 다시 화덕에 넣어준다
+
     while queue:    # 화덕에 피자가 있는 동안
         check = queue.popleft()
         if not queue:
             # 피자를 뺏는데 더이상 화덕에 남은 피자가 없다면
             print(f'#{tc}', check[0])
+        elif check[1]//2 == 0:
+            if cheese:
+                queue.append([pizza, cheese.pop(0)])    # 새로운 피자를 넣어준다
+                pizza += 1
         elif check[1]//2 != 0:  # 피자가 녹지 않았다면
             check[1] //= 2
             queue.append(check)

@@ -4,8 +4,7 @@ sys.stdin = open('input.txt')
 
 for _ in range(10):
     tc = int(input())
-    queue = deque()
-    queue.extend(list(map(int, input().split())))
+    queue = deque(list(map(int, input().split())))
     minus = 0   # 감소시킬 수
     while True:
         minus = minus % 5 + 1   # 1, 2, 3, 4, 5 반복
