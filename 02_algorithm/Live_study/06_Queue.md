@@ -113,3 +113,22 @@ print(deq())    # ('cQ is empty', [4, 5, 2, 3])
 ### 우선순위 큐
 - 우선순위를 가진 항목들을 저장하는 큐
 - 배열을 사용하므로 삽입이나 삭제 연산이 일어날 때 원소 재배치에 소요되는 시간이나 메모리 낭비가 큼
+
+# 8/18 강의
+## BFS
+- 탐색 시작점의 인접한 정점들을 먼저 모두 차례로 방문한 후에,<br/>
+방문했던 정점을 시작으로 하여 다시 인접한 정점들을 차례로 방문하는 방식
+- 인접한 정점들에 대해 탐색을 한 후, 차례로 다시 너비우선탐색을 진행해야 하므로, <br/>선입선출 형태의 큐를 활용
+```python
+def BFS(G, v, n):   # 그래프 G, 탐색 시작점 v
+    visited = [0] * (n+1)
+    queue = []
+    queue.append(v)
+    visited[v] = 1
+    while queue:
+        t = queue.pop(0)
+        for i in G[t]:  # t와 연결된 모든 정점에 대해
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = visited[t] + 1
+```
