@@ -12,15 +12,15 @@ def preorder(node):
 
 def inorder(node):
     if node != 0:   # 존재하는 정점이면
-        preorder(left[node])    # 왼쪽 서브트리로 이동
+        inorder(left[node])    # 왼쪽 서브트리로 이동
         print(node, end=' ')    # visit(n)
-        preorder(right[node])    # 오른쪽 서브트리로 이동
+        inorder(right[node])    # 오른쪽 서브트리로 이동
 
 
 def postorder(node):
     if node != 0:   # 존재하는 정점이면
-        preorder(left[node])    # 왼쪽 서브트리로 이동
-        preorder(right[node])    # 오른쪽 서브트리로 이동
+        postorder(left[node])    # 왼쪽 서브트리로 이동
+        postorder(right[node])    # 오른쪽 서브트리로 이동
         print(node, end=' ')    # visit(n)
 
 
@@ -65,10 +65,10 @@ for i in range(1, V+1):
 #     root += 1
 
 print('전위순회')
-preorder(root)
+preorder(root)      # 1 2 4 7 12 3 5 8 9 6 10 11 13
 print()
 print('중위순회')
-inorder(root)
+inorder(root)       # 12 7 4 2 1 8 5 9 3 10 6 13 11
 print()
 print('후위순회')
-postorder(root)
+postorder(root)     # 12 7 4 2 8 9 5 10 13 11 6 3 1
