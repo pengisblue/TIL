@@ -210,6 +210,8 @@ def preorder(node):
         print(node, end=' ')    # visit(n)
         preorder(left[node])    # 왼쪽 서브트리로 이동
         preorder(right[node])    # 오른쪽 서브트리로 이동
+        # preorder(tree[node][0])
+        # preorder(tree[node][1])
 
 
 def inorder(node):
