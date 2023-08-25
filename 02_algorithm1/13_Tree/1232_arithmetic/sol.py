@@ -3,19 +3,20 @@ sys.stdin = open('input.txt')
 
 
 def postorder(node):
-    if node != 0:
-        postorder(tree[node][1])
-        postorder(tree[node][2])
+    if type(tree[node][0]) == int:
+        return tree[node][0]
+    else:
+        left = postorder(tree[node][1])
+        right = postorder(tree[node][2])
+
         if tree[node][0] == '+':
-            return postorder(tree[node][1]) + postorder(tree[node][2])
+            return left + right
         elif tree[node][0] == '-':
-            return postorder(tree[node][1]) - postorder(tree[node][2])
+            return left - right
         elif tree[node][0] == '*':
-            return postorder(tree[node][1]) * postorder(tree[node][2])
+            return left * right
         elif tree[node][0] == '/':
-            return postorder(tree[node][1]) // postorder(tree[node][2])
-        else:
-            return tree[node][0]
+            return left // right
 
 
 for tc in range(1, 11):
