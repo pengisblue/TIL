@@ -1,0 +1,4 @@
+#1 Possible
+#2 Impossible
+#3 Possible
+#4 Impossible
