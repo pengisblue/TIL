@@ -1,16 +1,5 @@
 import sys
 sys.stdin = open('input.txt')
-print(int('0001101', 2))
-print(int('0011001', 2))
-print(int('0010011', 2))
-print(int('0111101', 2))
-print(int('0100011', 2))
-print(int('0110001', 2))
-print(int('0101111', 2))
-print(int('0111011', 2))
-print(int('0110111', 2))
-print(int('0001011', 2))
-
 
 T = int(input())
 for tc in range(1, T+1):
