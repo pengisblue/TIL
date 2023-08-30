@@ -1,26 +1,19 @@
-def perm(idx, chosen):
-    if idx == N:
-        tmp = []
-        for i in chosen:
-            tmp.append(data[i])
-        result.append(tmp)
+def f(i, N, K):     # i는 이전에 고른 개수, N개에서 K개를 고르는 순열
+    if i == K:  # 순열 완성
+        print(p)
         return
-
-    # 모든 N개의 원소를 조사했는지 판단
-    for i in range(N):
-        # i번째에 쓰겠다고 이전에 판정된 적이 있다면,
-        # 현재 조사 대상을 i번째에 쓸 수 없으므로
-        if i in chosen:
-            continue
-        chosen[idx] = i     # idx번째 대상을 i번째에 둬서 사용
-        perm(idx+1, chosen)
-        # chosen[idx] = -1
+    else:   # p[i]에 들어갈 숫자를 결정
+        for j in range(N):
+            if used[j] == 0:    # 아직 사용되기 전이면
+                p[i] = card[j]
+                used[j] = 1
+                f(i+1, N, K)
+                used[j] = 0
 
 
-N = 4
-data = '1247'
-result = []
-# i번째에 들어갈 수 있는 0, N-1 까지를 제외한
-chosen = [-1] * N
-perm(0, chosen)
-print(result)
+card = [1, 2, 3, 4, 5]
+N = 5   # N개의 숫자에서
+K = 3   # K개를 고르는 순열
+used = [0] * N  # 이미 사용한 카드인지 표시
+p = [0] * K
+f(0, N, K)

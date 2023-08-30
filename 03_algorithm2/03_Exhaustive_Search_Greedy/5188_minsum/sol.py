@@ -17,12 +17,8 @@ def bfs():
             dy = j + dj[k]
             if 0 <= dx < N and 0 <= dy < N:
                 sum_v = visited[i][j] + arr[dx][dy]
-                # 방문한적 있는데 이전 방문보다 값이 작으면
-                if visited[dx][dy] and sum_v < visited[dx][dy]:
-                    visited[dx][dy] = sum_v
-                    queue.append((dx, dy))
-                # 방문한 적이 없으면
-                elif not visited[dx][dy]:
+                # 방문한 적이 없거나 방문한적 있는데 이전 방문보다 값이 작으면
+                if not visited[dx][dy] or sum_v < visited[dx][dy]:
                     visited[dx][dy] = sum_v
                     queue.append((dx, dy))
 
