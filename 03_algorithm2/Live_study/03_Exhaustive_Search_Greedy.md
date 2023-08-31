@@ -131,3 +131,37 @@ print(result)
  ['1', '2', '4', '3', '7', '8'], ... ]
 '''
 ```
+# 8/31 강의
+## 조합
+```python
+def ncr(n, r):
+    if r == 0:
+        print(tr)
+    elif n < r:     # 남은 원소보다 많은 원소를 선택해야하는 경우
+        return      # 불가
+    else:
+        tr[r-1] = a[n-1]
+        ncr(n-1, r-1)   # a[n-1]을 조합에 포함시키는 경우
+        ncr(n-1, r)     # a[n-1]을 조합에 포함시키지 않는 경우
+
+N = 5
+R = 3
+a = [1, 2, 3, 4, 5]
+tr = [0] * R
+ncr(N, R)
+```
+```python
+def nCr(n, r, s):   # n개에서 r개를 고르는 조합, s 선택할 수 있는 구간의 시작
+    if r == 0:
+        print(*comb)
+    else:
+        for i in range(s, n-r+1):
+            comb[r-1] = A[i]
+            nCr(n, r-1, i+1)
+       
+A = [1, 2, 3, 4, 5]
+N = len(A)
+R = 3
+comb = [0] * R
+nCr(N, R, 0)
+```
