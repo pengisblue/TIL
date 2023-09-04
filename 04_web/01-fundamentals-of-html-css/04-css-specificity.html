@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      color: darkviolet !important;
+    }
+
+    p {
+      color: blue;
+    }
+
+    .orange {
+      color: orange;
+    }
+
+    .green {
+      color: green;
+    }
+
+    #red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <p>1</p>
+  <p class="orange">2</p>
+  <!-- 우선 순위는 소스코드에(위에) 작성된 순서임 -->
+  <p class="green orange">3</p>
+  <p id="red" class="orange green">4</p>
+  <p>5</p>
+  <h2 id="red">6</h2>
+  <p>7</p>
+  <h2>8</h2>
+</body>
+
+</html>
