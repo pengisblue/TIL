@@ -39,12 +39,14 @@
 - 목적
     - 나타내고 싶진 않지만 `추가적인 기능, 내용`을 담고 싶을 때 사용
     - CSS에서 해당 `요소를 선택`하기 위한 값으로 활용됨
+#### [01-html-basic](../01-fundamentals-of-html-css/01-html-basic.html)
 ### Text Structure
 > `텍스트 구조와 의미`제공
 ```html
 <h1>Heading</h1>
 ```
 - 단순히 텍스트를 크게 만드는 것이 아닌 현재 `문서의 최상위 제목`이라는 의미 부여
+#### [02-html-text-structure](../01-fundamentals-of-html-css/02-html-text-structure.html)
 ## 웹 스타일링
 ### CSS
 > 웹페이지의 `디자인`과 `레이아웃`을 구성하는 언어
@@ -62,6 +64,21 @@ h1 {
 2. 내부 스타일 시트: head 태그 안에 style 태그 작성
 3. 외부 스타일 시트: 별도 CSS 파일 생성 후 html 태그를 사용해 불러오기
 #### CSS Selectors 종류
+- 기본 선택자
+  - 전체(*) 선택자
+    - HTML 모든 요소를 선택
+  - 요소(tag) 선택자
+    - 지정한 모든 태그를 선택
+  - 클래스(class) 선택자('.')
+    - 주어진 클래스 속성을 가진 모든 요소를 선택
+  - 아이디(id) 선택자('#')
+    - 주어진 아이디 속성을 가진 요소 선택
+    - 문서에서는 주어진 아이디를 가진 요소가 하나만 있어야 함
+  - 속성(attr) 선택자 등
+- 결합자 (Combinators)
+  - 자식 결합자 (>)
+  - 자손 결합자(" "(공백))
+#### [03-css-selectors](../01-fundamentals-of-html-css/03-css-selectors.html)
 #### Specificity (우선순위)
 - 동일한 우선순위를 갖는 규칙이 적용될 때, CSS에서 마지막에 나오는 규칙이 사용됨
 ```css
@@ -71,8 +88,9 @@ h1 {
 h1 {
     color: purple;
 }
+/* purple이 적용 됨 */
 ```
-- purple이 적용 됨
+#### [04-css-specificity](../01-fundamentals-of-html-css/04-css-specificity.html)
 ##### 우선순위 순서
 1. Importance
     - !importance
@@ -81,3 +99,5 @@ h1 {
 3. 선택자
     - id 선택자 > class 선택자 > 요소 선택자
 4. 소스 코드 순서
+#### [05-css-inheritance](../01-fundamentals-of-html-css/05-css-inheritance.html)
+#### [06-css-specificity_inheritance](../01-fundamentals-of-html-css/06-css-specificity_inheritance.html)

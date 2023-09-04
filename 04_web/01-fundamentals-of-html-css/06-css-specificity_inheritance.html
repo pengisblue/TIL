@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .large-box {
+      width: 400px;
+      height: 400px;
+      border-style: solid;
+      border-color: black;
+      border-width:  2px;
+      text-align: center;
+    }
+    
+    .medium-box {
+      width: 200px;
+      height: 200px;
+      border-style: dashed;
+      border-color: red;
+      border-width: 2px;
+      color: orangered;
+    }
+
+    .small-box {
+      width: 150px;
+      height: 100px;
+      border-style: dotted;
+      border-color: blue;
+      border-width: 2px;
+    }
+
+    p {
+      color: blue;
+    }
+    
+    .large-box__title {
+      color: red;
+    }
+    /* 결합자 */
+    /* > : 자식 */
+    /* ' ' : 자손 */
+    /* 둘의 우선순위가 같기 때문에 소스코드 순서에 따라 적용 */
+    .small-box > p {
+      color: green;
+    }
+    .medium-box p {
+      color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="large-box">
+    <p class="large-box__title">제일 큰 상자</p>
+
+    <div class="medium-box">
+      <p>중간 크기 상자</p>
+
+      <div class="small-box">
+        <p>제일 작은 상자</p>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
