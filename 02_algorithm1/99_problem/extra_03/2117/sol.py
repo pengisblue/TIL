@@ -18,14 +18,16 @@ for tc in range(1, T+1):
     while K**2 + (K-1)**2 <= total_house * M:
         K += 1
     max_K = K - 1   # 최대 영역의 크기
-    max_house = 1   # 서비스 가능한 최대 가구 수
+    max_house = 0   # 서비스 가능한 최대 가구 수
     for i in range(N):
         for j in range(N):
             house = city[i][j]      # 중심으로 부터 방범 영역까지의 가구 수
-            print(house)
-            for k in range(2, max_K+1):     # 최대 운영 가능 영역까지 영역의 크기를 순회
+            for k in range(1, max_K+1):     # 최대 운영 가능 영역까지 영역의 크기를 순회
                 cost = k**2 + (k-1)**2      # 영역이 k 일 때, 방범에 필요한 비용
-                min_house = cost // M + 1   # 영역이 k 일 때, 서비스에 필요한 최소 가구 수
+                if cost % M:
+                    min_house = cost // M + 1   # 영역이 k 일 때, 서비스에 필요한 최소 가구 수
+                else:
+                    min_house = cost // M
                 dis = k - 1                 # 영역이 k 일 때, 탐색 거리
                 for way in range(4):    # 반시계 방향으로 순회하면서
                     for go in range(dis):   # 대각선 둘레 탐색
