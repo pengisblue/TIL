@@ -22,7 +22,7 @@ for tc in range(1, T+1):
                     # print(n[i], n[j])
                     n[i], n[j] = n[j], n[i]
                     SET.add(''.join(n))
-                    print(SET)
+                    # print(SET)
                     n[i], n[j] = n[j], n[i]
         nums, SET = SET, nums
 

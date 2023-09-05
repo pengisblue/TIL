@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      height: 500px;
+      border: 1px solid black;
+      display: flex;
+      /* 기본 값 */
+      flex-direction: row;
+      /* 메인 축 변경 */
+      /* flex-direction: column; */
+      /* 오른쪽에서 왼쪽 */
+      /* flex-direction: row-reverse; */
+      /* 아래에서 위로 */
+      /* flex-direction: column-reverse; */
+      
+      /* 기본 값 */
+      /* item 크기가 container에 맞게 변경 */
+      /* flex-wrap: nowrap; */
+      /* 자신의 원래 크기를 지킴 */
+      /* 메인 축의 크기가 줄어들면 다음 행 생성 */
+      flex-wrap: wrap;
+
+      /* 메인 축 정렬 */
+      /* 기본 값 */
+      justify-content: flex-start;
+      /* 메인 축 기준 가운데 정렬 */
+      /* justify-content: center; */
+      /* 우측 정렬 */
+      /* justify-content: flex-end; */
+
+      /* 교차축 정렬 */
+      /* align-content: flex-start; */
+      /* align-content: center; */
+      /* align-content: end; */
+
+      /* 행 안의 아이템들의 교차축 정렬 */
+      /* align-items: flex-start; */
+      /* align-items: center; */
+      /* align-items: flex-end; */
+    }
+
+    .post {
+      background-color: grey;
+      border: 1px solid black;
+      margin: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    /* 아이템 하나만 교차축 정렬 */
+    .item1 {
+      align-self: center;
+    }
+
+    .item2 {
+      align-self: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="post item1">
+      <h2>Post Title 1</h2>
+      <p>Post Content 1</p>
+    </div>
+    <div class="post item2">
+      <h2>Post Title 2</h2>
+      <p>Post Content 2</p>
+    </div>
+    <div class="post">
+      <h2>Post Title 3</h2>
+      <p>Post Content 3</p>
+    </div>
+    <div class="post">
+      <h2>Post Title 4</h2>
+      <p>Post Content 4</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
