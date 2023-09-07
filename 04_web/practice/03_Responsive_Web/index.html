@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 외부 참조 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- 상대경로 index.css -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav w-100 mb-2 mb-lg-0 justify-content-around">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">마이캠퍼스</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">강의실</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">커뮤니티</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HELP DESK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">멘토링 게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">알람</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              학번 이름
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">회원정보</a></li>
+              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- 추가링크 -->
+        <!-- lg 전까지 display: none -->
+        <!-- lg 이후 부터 diplay: flex -->
+        <div class="d-none d-lg-flex fw-bold">
+          <div class="nav-box bg-secondary">
+            JOB SSAFY
+            <hr class="border border-white border-2">
+          </div>
+          <div class="nav-box bg-primary text-white">
+            SSAFY GIT
+            <hr class="border border-white border-2">
+          </div>
+          <div class="nav-box bg-success text-white">
+            Meeting SSAFY
+            <hr class="border border-white border-2">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- header -->
+  <header>
+
+  </header>
+  <!-- main -->
+  <main class="container mt-3">
+    <!-- 출석체크 마일리지 -->
+    <section class="row justify-content-evenly">
+      <!-- 출석체크 -->
+      <div class="col-12 col-lg-4 bg-warning p-4">
+        <div class="main-box-title d-flex justify-content-between">
+          <h3>출석 체크 & 현황</h3>
+          <button>+</button>
+        </div>
+        <div class="main-box-body row">
+          <!-- 날짜 & 요일 -->
+          <div class="col-4 text-primary">
+            <h4 class="fw-bold">09.07</h4>
+            <h4 class="fw-bold">목요일</h4>
+          </div>
+          <!-- button -->
+          <div class="col-7 offset-1">
+            <button class="btn btn-sm btn-light btn-height">입실하기</button>
+            <button class="btn btn-sm btn-light btn-height">퇴실하기</button>
+          </div>
+        </div>
+      </div>
+      <!-- 마일리지 -->
+      <div class="col-12 col-lg-7 bg-primary row p-4 text-white">
+        <div class="col-5">
+          <h4>마일리지</h4>
+          <h4>레벨 & 경험치</h4>
+        </div>
+        <div class="col-1 vr p-0"></div>
+        <div class="col-6">
+          <h4>알림</h4>
+        </div>
+      </div>
+    </section>
+    <section>
+
+    </section>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

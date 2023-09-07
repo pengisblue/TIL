@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    .box {
+      border: 1px solid black;
+      background-color: lightblue;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="text-center">Basic</h2>
+  <div class="container">
+    <div class="row">
+      <div class="box col">col</div>
+      <div class="box col">col</div>
+      <div class="box col">col</div>
+    </div>
+    <div class="row">
+      <div class="box col-4">col-4</div>
+      <div class="box col-4">col-4</div>
+      <div class="box col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="box col-2">col-2</div>
+      <div class="box col-8">col-8</div>
+      <div class="box col-2">col-2</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 class="text-center">Nesting</h2>
+  <div class="container">
+    <div class="row">
+      <div class="box col-4">col-4</div>
+      <div class="box col-8">
+        <div class="row">
+          <div class="box col-6">col-6</div>
+          <div class="box col-6">col-6</div>
+          <div class="box col-6">col-6</div>
+          <div class="box col-6">col-6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 class="text-center">Offset</h2>
+  <div class="container">
+    <!-- 상쇄(offset)가 항상 먼저 일어난다. -->
+    <div class="row">
+      <div class="box col-4">col-4</div>
+      <div class="box col-4 offset-4">col-4 offset-4</div>
+    </div>
+    <div class="row">
+      <div class="box offset-3 col-3">col-3 offset-3</div>
+      <div class="box col-3 offset-3">col-3 offset-3</div>
+    </div>
+    <div class="row">
+      <div class="box col-6 offset-3">col-6 offset-3</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 좌, 우 거터 0 -->
+  <h2 class="text-center">Gutters(gx-0)</h2>
+  <div class="container">
+    <div class="row gx-0">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- 상, 하 거터 5 -->
+  <h2 class="text-center">Gutters(gy-5)</h2>
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+
+  <!-- 상, 하, 좌, 우 거터 5 -->
+  <h2 class="text-center">Gutters(g-5)</h2>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+      <div class="col-6">
+        <div class="box">col</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
