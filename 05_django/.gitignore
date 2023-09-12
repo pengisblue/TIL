@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/django,python,windows,pycharm,visualstudiocode,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,windows,pycharm,visualstudiocode,macos
+# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudiocode,python,django,pycharm
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,visualstudiocode,python,django,pycharm
 
 ### Django ###
 *.log
@@ -454,21 +454,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Created by https://www.toptal.com/developers/gitignore/api/venv
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv
-
-### venv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-.Python
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-.venv
-pip-selfcheck.json
-
-# End of https://www.toptal.com/developers/gitignore/api/django,python,windows,pycharm,visualstudiocode,macos
+# End of https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudiocode,python,django,pycharm
