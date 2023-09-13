@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+  메인 페이지
+{% endblock title %}
+
+{% block content %}
+  <h1>INDEX PAGE</h1>
+  <p>{{ greeting }}</p>
+  <a href="{% url "pages:index" %}">[PAGES]</a>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>사용자가 작성한 숫자 : {{ number }}</h1>
+  <hr>
+  <h2>다음 숫자: {{ next_number}}</h2>
+  <a href="{% url "articles:random_number" next_number%}">다음 페이지</a>
+{% endblock content %}

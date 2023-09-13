@@ -17,7 +17,7 @@ def dinner(request):
     context = {
         'foods': foods,
         'picked': picked,
-        'empty_list': empty_list
+        'empty_list': empty_list,
     }
     return render(request, 'articles/dinner.html', context)
 
@@ -48,13 +48,13 @@ def catch(request):
 
 def greeting(request, name):
     context = {
-        'name': name
+        'name': name,
     }
     return render(request, 'articles/gretting.html', context)
 
 
 def detail(request, num):
     context = {
-        'num': num
+        'num': num,
     }
     return render(request, 'articles/detail.html', context)
