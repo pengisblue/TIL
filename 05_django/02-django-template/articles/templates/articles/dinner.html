@@ -1,0 +1,21 @@
+{% extends "articles/base.html" %}
+
+
+{% block content %}
+  <p>{{ picked }} 메뉴가 선택되었습니다.</p>
+  <p>{{ picked|length }} 글자입니다.</p>
+  <h2>메뉴판</h2>
+  <ul>
+    {% for food in foods %}
+      <li>{{ food }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if empty_list|length == 0 %}
+    <p>메뉴가 소진되었습니다.</p>
+  {% else %}
+    <p>아직 메뉴가 남았습니다.</p>
+  {% endif %}
+{% endblock content %}
+
+
