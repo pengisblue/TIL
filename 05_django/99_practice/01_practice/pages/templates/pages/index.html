@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  페이지
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+메인 페이지
+{% endblock title %}
+
+{% block content %}
+  <h1>PAGES INDEX</h1>
+  <!--절대 경로-->
+  <a href="http://127.0.01:8000/articles/index/">[ARTICLES]</a>
+  <!--route로 부터 상대 경로-->
+  <a href="/articles/index/">[ARTICLES]</a>
+  <!--현재 위치로 부터 상대 경로-->
+  <a href="articles/index/">[ARTICLES]</a>
+  <!---->
+  <a href="{% url "articles:index" %}">[ARTICLES]</a>
+{% endblock content %}
