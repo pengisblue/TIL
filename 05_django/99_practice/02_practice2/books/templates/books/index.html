@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+도서 목록
+{% endblock title %}
+
+{% block content %}
+  {% for book in book_list %}
+      <h3>작성자: <a href="{% url "books:author_info" book.author%}">{{ book.author }}</a></h3>
+      <p>책 목록: 
+        {% for write_book in book.book_list %}
+          {{ write_book }}
+        {% endfor %}
+      </p>
+  {% endfor %}
+{% endblock content %}

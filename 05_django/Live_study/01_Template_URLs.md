@@ -1,5 +1,4 @@
-# 9/13 강의
-# Django Template & URLs
+# 9/13 강의 Django Template & URLs
 ## Django Template Language (DTL)
 > Template에서 조건, 반복, 변수 등의 프로그래밍적 기능을 제공하는 시스템
 1. Variable
