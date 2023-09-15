@@ -56,28 +56,33 @@ $ python manage.py shell_plus
 ### Create
 #### save()
 ```bash
+# 첫 번째 방법
+# Article(class)로 부터 article(instance) 생성
 In [1]: article = Article()
 
 In [2]: article
 Out[2]: <Article: Article object (None)>
 
-# 인스턴스 변수 생성
+# 인스턴스 변수(title)에 값을 할당
 In [3]: article.title = 'first'
 
 In [4]: article.title
 Out[4]: 'first'
 
+# 인스턴스 변수(content)에 값을 할당
 In [5]: article.content = 'django!'
 
 In [6]: article.content
 Out[6]: 'django!'
 
 # DB에 저장
+# save를 하지않으면 인스턴스에만 있고 DB에 저장되지 않음
 In [7]: article.save()
 
 In [8]: article
 Out[8]: <Article: Article object (1)>   # (None) -> (1) id를 의미
 
+# 전체 데이터 조회(QuerySet을 반환)
 In [9]: Article.objects.all()
 Out[9]: <QuerySet [<Article: Article object (1)>]>
 
@@ -86,16 +91,18 @@ In [10]: articles = Article.objects.all()
 In [11]: articles
 Out[11]: <QuerySet [<Article: Article object (1)>]>
 
+# 인덱스로 데이터에 접근 가능
 In [12]: articles[0]
 Out[12]: <Article: Article object (1)>
 
 In [24]: article
 Out[24]: <Article: Article object (1)>
 
+# 인스턴스 article을 활용하여 인스턴스 변수 활용하기
 In [25]: article.id
 Out[25]: 1
 
-In [30]: article.pk     # primary key
+In [30]: article.pk     # primary key: id와 같지만 pk를 사용하는 것을 권장
 Out[30]: 1
 
 In [26]: article.title
@@ -111,6 +118,7 @@ In [29]: article.updated_at
 Out[29]: datetime.datetime(2023, 9, 15, 0, 41, 40, 556042, tzinfo=datetime.timezone.utc) 
 ```
 ```bash
+# 두 번째 방법
 In [31]: article = Article(title='second', content='django!')
 
 In [32]: article.title
@@ -126,9 +134,12 @@ In [35]: article.pk
 Out[35]: 2
 ```
 ```bash
+# 세 번째 방법
+# QuerySet API 중 create() 메서드 활용
 In [37]: Article.objects.create(title='third', content='django!')
 Out[37]: <Article: Article object (3)>
-# save가 포함
+# save()가 되어 생성된 데이터를 반환한다
+# 유효성 검사가 힘들어서 잘 사용하진 않을듯..?
 
 In [40]: article.pk
 Out[40]: 2
@@ -136,6 +147,8 @@ Out[40]: 2
 ```
 ### Read
 #### all()
+- 전체 데이터 조회
+    - QuerySet을 반환한다.
 ```bash
 In [41]: Article.objects.all()
 Out[41]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>, <Article: Article object (3)>]>
@@ -150,6 +163,7 @@ second
 third
 ```
 #### get()
+- 단일 데이터 조회
 - 객체를 찾을 수 없으면 `DoesNotExist` 예외를 발생시키고, 
 - 둘 이상의 객체를 찾으면 `MultipleObjectsReturned` 예외를 발생시킴
     - `primary key`와 같이 `고유성을 보장하는 조회`에서 사용해야함
@@ -166,6 +180,7 @@ In [46]: Article.objects.get(content='django!')
 MultipleObjectsReturned: get() returned more than one Article -- it returned 3! 
 ```
 #### filter()
+- 특정 조건 데이터 조회
 ```bash
 In [47]: Article.objects.filter(content='django!')
 Out[47]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>, <Article: Article object (3)>]>
@@ -212,6 +227,7 @@ In [58]: Article.objects.get(pk=1)
 DoesNotExist: Article matching query does not exist.
 ```
 ```python
+# 전체 데이터 삭제
 In [59]: articles = Article.objects.all()
 
 In [60]: articles
