@@ -55,7 +55,7 @@ $ python manage.py shell_plus
 ```
 ### Create
 #### save()
-```bash
+```shell
 # 첫 번째 방법
 # Article(class)로 부터 article(instance) 생성
 In [1]: article = Article()
@@ -117,7 +117,7 @@ Out[28]: datetime.datetime(2023, 9, 15, 0, 41, 40, 556042, tzinfo=datetime.timez
 In [29]: article.updated_at
 Out[29]: datetime.datetime(2023, 9, 15, 0, 41, 40, 556042, tzinfo=datetime.timezone.utc) 
 ```
-```bash
+```shell
 # 두 번째 방법
 In [31]: article = Article(title='second', content='django!')
 
@@ -133,7 +133,7 @@ In [34]: article.save()
 In [35]: article.pk
 Out[35]: 2
 ```
-```bash
+```shell
 # 세 번째 방법
 # QuerySet API 중 create() 메서드 활용
 In [37]: Article.objects.create(title='third', content='django!')
@@ -149,7 +149,7 @@ Out[40]: 2
 #### all()
 - 전체 데이터 조회
     - QuerySet을 반환한다.
-```bash
+```shell
 In [41]: Article.objects.all()
 Out[41]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>, <Article: Article object (3)>]>
 
@@ -167,30 +167,30 @@ third
 - 객체를 찾을 수 없으면 `DoesNotExist` 예외를 발생시키고, 
 - 둘 이상의 객체를 찾으면 `MultipleObjectsReturned` 예외를 발생시킴
     - `primary key`와 같이 `고유성을 보장하는 조회`에서 사용해야함
-```bash
+```shell
 In [44]: Article.objects.get(pk=1)
 Out[44]: <Article: Article object (1)>
 
 In [45]: Article.objects.get(pk=100)
 DoesNotExist: Article matching query does not exist.
 ```
-```bash
+```shell
 In [46]: Article.objects.get(content='django!')
 # get()은 단일 데이터 조회만 가능 -> pk로 조회 할 때만 쓰기
 MultipleObjectsReturned: get() returned more than one Article -- it returned 3! 
 ```
 #### filter()
 - 특정 조건 데이터 조회
-```bash
+```shell
 In [47]: Article.objects.filter(content='django!')
 Out[47]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>, <Article: Article object (3)>]>
 ```
-```bash
+```shell
 # 조건을 만족하는 결과가 없다면 빈 QuerySet 반환
 In [48]: Article.objects.filter(content='ssafy')
 Out[48]: <QuerySet []>
 ```
-```bash
+```shell
 # 결과의 개수와 관계없이 QuerySet으로 반환
 In [49]: Article.objects.filter(title='first')
 Out[49]: <QuerySet [<Article: Article object (1)>]>
@@ -199,7 +199,7 @@ Out[49]: <QuerySet [<Article: Article object (1)>]>
 - 데이터 수정
     - 데이터를 `조회`하여
     - 인스턴스 변수를 변경 후 save 메서드 호출
-```bash
+```shell
 In [50]: article = Article.objects.get(pk=1)
 
 In [51]: article
@@ -216,7 +216,7 @@ In [54]: article.save()
 - 데이터 삭제
     - 데이터를 `조회`하여
     - delete 메서드 호출
-```bash
+```shell
 In [56]: article
 Out[56]: <Article: Article object (1)>
 
@@ -239,11 +239,31 @@ Out[61]: (2, {'articles.Article': 2})
 In [62]: articles
 Out[62]: <QuerySet []>
 ```
+```shell
+# 추가
+In [16]: garage_2
+Out[16]: <Garage: Garage object (2)>
+
+# 데이터를 삭제해도
+In [17]: garage_2.delete()
+Out[17]: (1, {'garages.Garage': 1})
+
+# 인스턴스에는 남아있음
+In [18]: garage_2
+Out[18]: <Garage: Garage object (None)>     # 삭제되었기 때문에 pk값은 None
+
+# 다시 저장하면 인스턴스에 저장된 값으로 저장됨
+In [19]: garage_2.save()
+
+In [20]: garages
+Out[20]: <QuerySet [<Garage: Garage object (1)>, <Garage: Garage object (3)>]>      
+# pk=3으로 새로 저장되었다
+```
 ## 참고
 ### Field lookups
 - 특정 레코드에 대한 조건을 설정하는 방법
 - QuerySet 메서드 filter(), exclude() 및 get()에 대한 키워드 인자로 지정됨
-```bash
+```shell
 In [66]: Article.objects.filter(content__contains='dja')
 Out[66]: <QuerySet [<Article: Article object (4)>, <Article: Article object (5)>]>   
 ```
