@@ -33,7 +33,7 @@ Article.objectes.all()  # 전체를 조회하는 구문
 ```bash
 # 외부 라이브러리 설치
 $ pip install ipython
-$ pip install django_extensions     # shell_plus를 사용
+$ pip install django-extensions     # shell_plus를 사용
 ```
 ```python
 # django-extensions는 settings.py에 등록해줘야함
@@ -41,7 +41,7 @@ $ pip install django_extensions     # shell_plus를 사용
 
 INSTALLED_APPS = [
     'articles',
-    'django-extensions',
+    'django_extensions',
 ...,
 ]
 ```
