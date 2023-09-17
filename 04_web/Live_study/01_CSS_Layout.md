@@ -23,6 +23,8 @@
     }
     ```
 #### [02-box-sizing](../02-box-model/02-box-sizing.html)
+## 박스 타입
+> Block & Inline
 ### Normal flow
 > CSS를 적용하지 않았을 경우 웹페이지 요소가 기본적으로 배치되는 방향
 - Inline Direction
@@ -33,6 +35,17 @@
     - 수평 방향
         - padding, margins, borders가 적용되어 다른 요소를 밀어낼 수 있음
     - a, img, span
+    - 수평 정렬
+        ```css
+        inline direction {
+            /* 좌측 정렬 */
+            text-align: left;
+            /* 우측 정렬 */
+            text-align: right;
+            /* 중앙 정렬 */
+            text-align: center;
+        }
+        ```
         
 - Block Direction
     - 항상 새로운 행으로 나뉨
@@ -40,6 +53,18 @@
     - 기본적으로 width 속성을 지정하지 않으면 박스는 inline 방향으로 사용가능한 공간을 모두 차지함
         (너비를 사용가능한 공간의 100%로 채우는 것)
     - h1~6, p, div
+    - 수평 정렬
+        ```css
+        block direction {
+            /* 좌측 정렬 */
+            margin-right: auto;
+            /* 우측 정렬 */
+            margin-left: auto;
+            /* 중앙 정렬 */
+            margin-right: auto;
+            margin-left: auto;
+        }
+        ```
 #### [03-block-inline](../02-box-model/03-block-inline.html)
 ### 기타 display 속성
 1. inline-block
@@ -96,7 +121,6 @@
 ![](flex_box_name.png)
 - Flex Container가 item들을 이동 시킴
 - `main axis(주 축)`, cross axis(교차 축)
-    - main start, main end : 기본 시작점
 - Flex container:
     - display: flex; 혹인 display: inline-flex; 가 설정된 부모 요소
     - 이 컨테이너의 1차 자식 요소들이 Flex Item이 됨
@@ -104,7 +128,100 @@
 - Flex Item:
     - Flex Container 내부에 레이아웃 되는 항목
 ### 레이아웃 구성
+#### Flex Container 지정
+```css
+.container {
+      display: flex;
+    }
+```
+#### flex-direction
+```css
+.container {
+      /* 기본 값 */
+      flex-direction: row;
+      /* 메인 축 변경 */
+      flex-direction: column;
+      /* 오른쪽에서 왼쪽 */
+      flex-direction: row-reverse;
+      /* 아래에서 위로 */
+      flex-direction: column-reverse;
+    }
+```
+#### flex-wrap
+```css
+.container {
+      /* 기본 값 */
+      /* item 크기가 container에 맞게 변경 */
+      flex-wrap: nowrap;
+      /* 자신의 원래 크기를 지킴 */
+      /* 메인 축의 크기가 줄어들면 다음 행 생성 */
+      flex-wrap: wrap;
+    }
+```
+#### justify-content
+> `주 축`을 따라 flex item과 주위에 공간을 분배
+```css
+.container {
+    /* 메인 축 정렬 */
+      /* 기본 값 */
+      justify-content: flex-start;
+      /* 메인 축 기준 가운데 정렬 */
+      justify-content: center;
+      /* 우측 정렬 */
+      justify-content: flex-end;
+    }
+```
+#### align-content
+> `교차 축`을 따라 flex item과 주위에 공간을 분배
+```css
+.container {
+      /* 교차축 정렬 */
+      align-content: flex-start;
+      align-content: center;
+      align-content: flex-end;
+    }
+```
+#### align-items
+> 교차 축을 따라 flex item 행을 정렬
+```css
+.container {
+      /* 행 안의 아이템들의 교차축 정렬 */
+      align-items: flex-start;
+      align-items: center;
+      align-items: flex-end;
+    }
+```
+#### align-self
+```css
+    /* 아이템 하나만 교차축 정렬 */
+    .item1 {
+      align-self: center;
+    }
+
+    .item2 {
+      align-self: flex-end;
+    }
+```
 #### [01-flexbox](../04-css-layout-flexible-box/01-flexbox.html)
+#### flex-grow
+- `남는` 행 여백을 비율에 따라 각 flex item에 분배
+    - 아이템이 컨테이너 내에서 확장하는 비율을 지정
+    - flex-grow <-> flex-shrink
+```css
+/* 행의 여백을 각 아이템이 1:2:3비율로 나눠가짐 */
+.item-1 {
+    flex-grow: 1;
+}
+.item-2 {
+    flex-grow: 2;
+}
+.item-3 {
+    flex-grow: 3;
+}
+```
 #### [02-flexbox-grow](../04-css-layout-flexible-box/02-flexbox-grow.html)
+#### flex-basis
+- flex item의 초기 크기 값을 지정
+- flex-basis와 width 값을 동시에 적용한 경우 flex-basis가 우선
 #### [03-flexbox-basis](../04-css-layout-flexible-box/03-flexbox-basis.html)
 #### [04-flexbox-responsive](../04-css-layout-flexible-box/04-flexbox-responsive.html)

@@ -8,6 +8,15 @@
 3. Gutter: 컬럼과 컬럼 사이의 여백 영역
     - x축 : padding, y축 : margin 으로 컨트롤
 ![Alt text](Grid_system_elem.png)
+```css
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+    </div>
+</div>
+```
 #### [01-grid-system](../07-bootstrap-grid-system/01-grid-system.html)
 
 ## Grid system for responsive web
@@ -18,8 +27,16 @@
 - 6개의 분기점 : xs, sm, md, lg, xl, xxl
 ![Alt text](breakpoints.png)
 - 각 breakpoints 마다 설정된 최대 너비 값 `이상으로` 화면이 커지면 grid system 동작이 변경됨
+```css
+<div class="col-12 col-md-6 col-lg-4"></div>
+```
 #### [01-breakpoints](../08-grid-system-for-responsive-web/01-breakpoints.html)
-
+#### Media Query로 작성한 breakpoints
+```css
+@media (min-width: 576px) {
+    ...
+}
+```
 ## 참고
 ### The Grid System
 - 편집 디자인에서 나온 개념
@@ -27,4 +44,14 @@
 ### Grid cards
 > 카드를 위한 그리드 시스템
 - row에서 col들을 컨트롤
+```css
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4">
+        <div class="col">
+            <div class="card"></div>
+        </div>
+    </div>
+
+</div>
+```
 #### [02-grid-cards](../08-grid-system-for-responsive-web/02-grid-cards.html)

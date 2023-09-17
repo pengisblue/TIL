@@ -4,10 +4,10 @@
 - [Bootstrap_공식_문서](https://getbootstrap.com/)
 ### 기본 사용법
 ```html
+<!-- mt-5 -->
+<!-- {property}{sides}-{size} -->
 <p class="mt-5">Hello, world!</p>
 ```
-- mt-5
-- {property}{sides}-{size}
 #### 클래스 이름으로 Spacing 표현하기
 ![Alt text](Bootstrap_Spacing.png)
 
@@ -15,6 +15,26 @@
 > 제목, 본문 텍스트, 목록 등
 - 공식 문서 확인하기
 - [Bootstrap_Typograpy](https://getbootstrap.com/docs/5.3/content/typography/)
+#### Display headings
+```css
+<p class="display-1~6"></p>
+```
+#### Inline text elements
+```css
+<mark>강조</mark>
+<del>취소선</del>
+<s>no longer accurate</s>
+<ins>an addition to the doucument</ins>
+<u>밑줄</u>
+<small>얇은 글씨체</small>
+<strong>굵은 글씨체</strong>
+<em>이탤릭체</em>
+```
+#### List
+```css
+/* 자식 리스트의 스타일이 리스트가 아닌 것 처럼 보이게 함 */
+<ul class="list-unstyled"></ul>
+```
 #### [01-typhography](../05-fundamentals-of-bootstrap/01-typhography.html)
 
 ### Color
