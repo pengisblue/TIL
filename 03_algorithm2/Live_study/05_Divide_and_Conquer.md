@@ -17,15 +17,54 @@
 - 시간복잡도: O(n log n)
 ### 알고리즘: 분할 과정
 ```python
-def merge_sort(lst):
-    if len(lst) == 1:
-        return lst
+def merge_sort(arr):
+    if len(arr) == 1:
+        return arr
     
+    left, right = [], []
+    mid = len(arr) // 2
+    for i in range(mid):
+        left.append(arr[i])
+    for i in range(mid, len(arr)):
+        right.append(arr[i])
+        
+    left = merge_sort(left)
+    right = merge_sort(right)
+
+    return merge(left, right)
 ```
 ### 알고리즘: 병합 과정
 ```python
 def merge(left, right):
+    result = []
+    # print(f'left: {left} / right: {right}', end=' / ')
 
+    while left or right:
+        if left and right:
+            if  left[0] <= right[0]:
+                result.append(left.pop(0))
+            else:
+                result.append(right.pop(0))
+        elif left:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
+
+    # print(f'result: {result}')
+    return result
+
+
+arr = [69, 10, 30, 2, 16, 8, 31, 22]
+print(merge_sort(arr))      # [2, 8, 10, 16, 22, 30, 31, 69]
+'''
+left: [69] / right: [10] / result: [10, 69]
+left: [30] / right: [2] / result: [2, 30]
+left: [10, 69] / right: [2, 30] / result: [2, 10, 30, 69]
+left: [16] / right: [8] / result: [8, 16]
+left: [31] / right: [22] / result: [22, 31]
+left: [8, 16] / right: [22, 31] / result: [8, 16, 22, 31]
+left: [2, 10, 30, 69] / right: [8, 16, 22, 31] / result: [2, 8, 10, 16, 22, 30, 31, 69
+'''
 ```
 ## 퀵 정렬
 - 병합 정렬과의 차이점
@@ -44,7 +83,54 @@ def merge(left, right):
     - 배열의 오른쪽에서 시작하는 j 는 피봇보다 작은 값을 찾는다
     - i와 j의 위치를 바꿔준다
     - i와 j가 교차되면 j와 피봇을 교환
-- 고정된 피봇을 기준으로 좌(피봇 보다 작은 값) 우(피봇 보다 큰 값) 각각 다시 루프를 돌림
+- 고정된 피봇을 기준으로 좌(피봇 보다 작은 값) 우(피봇 보다 큰 값) 각각 다시 루프
+```python
+def hoare_partition(left, right):
+    pivot = arr[left]
+    left += 1
+
+    while True:
+        while arr[left] < pivot:
+            left += 1
+        while arr[right] > pivot:
+            right -= 1
+
+        # print(f'left = {left} / right = {right} / arr = {arr}')
+
+        # 엇갈린 경우 right 가 pivot 의 위치
+        if left >= right:
+            return right
+
+        arr[left], arr[right] = arr[right], arr[left]
+
+def quick_sort(left, right):
+    # left 가 right 보다 커지면 종료
+    if left >= right:
+        return
+
+    pivot = hoare_partition(left, right)
+    arr[left], arr[pivot] = arr[pivot], arr[left]
+
+    quick_sort(left, pivot)
+    quick_sort(pivot + 1, right)
+
+
+arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
+quick_sort(0, len(arr) - 1)
+print(arr)      # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
+left = 2 / right = 5 / arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
+left = 3 / right = 2 / arr = [3, 2, 1, 6, 9, 4, 8, 7, 5]
+left = 1 / right = 0 / arr = [1, 2, 3, 6, 9, 4, 8, 7, 5]
+left = 2 / right = 1 / arr = [1, 2, 3, 6, 9, 4, 8, 7, 5]
+left = 4 / right = 8 / arr = [1, 2, 3, 6, 9, 4, 8, 7, 5]
+left = 6 / right = 5 / arr = [1, 2, 3, 6, 5, 4, 8, 7, 9]
+left = 4 / right = 3 / arr = [1, 2, 3, 4, 5, 6, 8, 7, 9]
+left = 5 / right = 4 / arr = [1, 2, 3, 4, 5, 6, 8, 7, 9]
+left = 8 / right = 7 / arr = [1, 2, 3, 4, 5, 6, 8, 7, 9]
+left = 7 / right = 6 / arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
+```
 #### Lomuto-Partition 알고리즘
 - 아이디어
     - 0. 피봇은 맨 끝값
@@ -55,6 +141,75 @@ def merge(left, right):
         - j가 피봇보다 작거나 같은 값을 만나면 i + 1 값과 스왑
     - j가 피봇에 도달하면 i + 1 값과 피봇 스왑
 - 고정된 피봇을 기준으로 좌, 우 각각 다시 루프를 돌림
+```python
+def quick_sort(arr, left, right):   # 배열, 왼쪽, 오른쪽 idx
+    # 분할 정복의 가장 핵심
+    # 정복 대상의 범위를 가장 작아질 때 까지 쪼갠다.
+    if left < right:
+        mid = cal(arr, left, right)
+        quick_sort(arr, left, mid-1)
+        quick_sort(arr, mid+1, right)
+
+# 피봇은 가장 오른쪽 원소
+def cal(arr, left, right):
+    # 피봇보다 큰 구간의 왼쪽 경계
+    i = left - 1
+    # 피봇보다 큰 구간의 오른쪽 경계
+    j = left
+    pivot = arr[right]
+    while j < right:
+        if pivot > arr[j]:
+            i += 1
+            # i와 j사이 구간에 피봇보다 큰 값이 있다.
+            if i < j:
+                arr[i], arr[j] = arr[j], arr[i]
+        j += 1
+    arr[i + 1], arr[right] = arr[right], arr[i + 1]
+    # print(f'left = {left} / right = {right} / arr = {arr}')
+    return i + 1
+
+
+arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
+quick_sort(arr, 0, len(arr)-1)
+print(arr)      # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
+left = 0 / right = 8 / arr = [3, 2, 4, 1, 5, 6, 8, 7, 9]
+left = 0 / right = 3 / arr = [1, 2, 4, 3, 5, 6, 8, 7, 9]
+left = 1 / right = 3 / arr = [1, 2, 3, 4, 5, 6, 8, 7, 9]
+left = 5 / right = 8 / arr = [1, 2, 3, 4, 5, 6, 8, 7, 9]
+left = 5 / right = 7 / arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
+```
+#### pythonic?
+```python
+def quick_sort(arr):
+    # 분할
+    if len(arr) <= 1:
+        return arr
+    else:
+        # 분할 작업
+        pivot = arr[0]
+        left, right = [], []
+        for i in range(1, len(arr)):
+            if arr[i] > pivot:
+                right.append(arr[i])
+            else:
+                left.append(arr[i])
+        
+        # print(f'left: {left} / pivot: {pivot} / right: {right}')
+        return [*quick_sort(left), pivot, *quick_sort(right)]
+    
+arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
+print(quick_sort(arr))      # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
+left: [2, 1] / pivot: 3 / right: [4, 6, 9, 8, 7, 5]
+left: [1] / pivot: 2 / right: []
+left: [] / pivot: 4 / right: [6, 9, 8, 7, 5]
+left: [5] / pivot: 6 / right: [9, 8, 7]
+left: [8, 7] / pivot: 9 / right: []
+left: [7] / pivot: 8 / right: []
+'''
+```
 ## 이진 검색
 - 자료가 정렬된 상태에서
 - 중앙 값과 key값 비교
