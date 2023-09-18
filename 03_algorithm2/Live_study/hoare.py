@@ -8,7 +8,7 @@ def hoare_partition(left, right):
         while arr[right] > pivot:
             right -= 1
 
-        # print(f'left = {left} / right = {right} / arr = {arr}')
+        print(f'left = {left} / right = {right} / arr = {arr}')
 
         # 엇갈린 경우 right 가 pivot 의 위치
         if left >= right:
