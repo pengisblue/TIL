@@ -18,14 +18,14 @@ def work(i, acc):
     for j in range(N):
         if j not in order:
             order[i] = j
-            work(i+1, acc * (P[i][j]/100))
+            work(i+1, acc * P[i][j])
             order[i] = -1
 
 
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
-    P = [list(map(int, input().split())) for _ in range(N)]
+    P = [list(map(lambda x:int(x)/100, input().split())) for _ in range(N)]
     order = [-1] * N
     max_acc = 0
     work(0, 1)

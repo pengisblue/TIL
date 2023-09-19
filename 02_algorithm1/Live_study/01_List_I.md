@@ -124,7 +124,7 @@ def counting_sort(numbers, k):
 
 
 numbers = [0, 4, 1, 3, 1, 2, 4, 1]
-print(counting_sort(numbers, 5))
+print(counting_sort(numbers, 5))    # [0, 1, 1, 1, 2, 3, 4, 4]
 ```
 
 ```python
