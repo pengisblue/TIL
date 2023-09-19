@@ -114,3 +114,5 @@ print()
 nodes[1].postorder()    # 4 2 5 6 3 1
 ```
 - 인접 리스트 저장
+
+## 힙(heap)
