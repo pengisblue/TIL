@@ -3,7 +3,7 @@ import sys
 sys.stdin = open('input.txt')
 
 
-def dfs(n):
+def bfs(n):
     queue = deque([n])
     visited[n] = 1
     while queue:
@@ -23,7 +23,7 @@ for tc in range(1, T+1):
     for i in range(0, N, 2):
         graph[from_to[i]].append(from_to[i+1])
 
-    dfs(start)
+    bfs(start)
     last = max(visited)
     for i in range(100, -1, -1):
         if visited[i] == last:
