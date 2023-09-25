@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>DETAIL</h2>
+  <h3>{{ article.pk }}번째 글</h3>
+  <hr>
+  <p>{{ article.title }}</p>
+  <p>{{ article.content }}</p>
+  <p>{{ article.created_at }}</p>
+  <p>{{ article.updated_at }}</p>
+  <hr>
+  <form action="{% url "articles:delete" article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit ">
+  </form>
+  <a href="{% url "articles:index" %}">[back]</a>
+</body>
+</html>

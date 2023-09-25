@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>NEW</h1>
+  <!-- action에 들어갈 값이 목적지 -->
+  <!-- 기본 method: GET -->
+  <form action="{% url "articles:create" %}" method="POST">
+    <!-- csrf토큰을 생성 -->
+    {% csrf_token %}
+    <div>
+      <label for="title">제목: </label>
+      <input type="text" id="title" name="title">
+    </div>
+    <div>
+      <label for="content">내용: </label>
+      <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit">
+  </form>
+</body>
+</html>
