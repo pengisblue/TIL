@@ -52,3 +52,24 @@ def delete(request, pk):
     # 조회한 게시글을 삭제
     article.delete() 
     return redirect('articles:index')
+
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {
+        'article': article
+    }
+    return render(request, 'articles/edit.html', context)
+
+
+def update(request, pk):
+    title = request.POST.get('title')
+    content = request.POST.get('content')
+
+    # 수정하고자하는 게시글 조회
+    article = Article.objects.get(pk=pk)
+    article.title = title
+    article.content = content
+    article.save()
+
+    return redirect('articles:detail', article.pk)
