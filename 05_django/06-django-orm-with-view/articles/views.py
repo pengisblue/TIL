@@ -42,8 +42,8 @@ def create(request):
     # Article.objects.create(title=title, contetn=content)
 
     # return render(request, 'articles/create.html')
-    # 페이지를 렌더하는 대신 index페이지를 다시 요청
-    return redirect('articles:index')
+    # 페이지를 렌더하는 대신 작성한 detail를 다시 요청
+    return redirect('articles:detail', article.pk)
 
 
 def delete(request, pk):
