@@ -13,7 +13,8 @@ class ArticleForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 # css class 적용
-                'class': 'my-title'
+                'class': 'my-title',
+                'placeholder': 'Enter the title',
             }
         )
     )
