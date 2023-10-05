@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>게시글 수정 페이지</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="UPDATE">
+  </form>
+  <a href="{% url 'articles:detail' article.pk %}">[BACK]</a>
+{% endblock content %}
+

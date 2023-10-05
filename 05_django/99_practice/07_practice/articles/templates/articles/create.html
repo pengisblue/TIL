@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>게시글 생성 페이지</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="CREATE">
+  </form>
+  <a href="{% url 'articles:index' %}">[BACK]</a>
+{% endblock content %}
+

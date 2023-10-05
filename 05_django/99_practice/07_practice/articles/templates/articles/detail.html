@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>게시글 상세 페이지</h1>
+
+  <p><span>{{ article.pk }}번 게시글 | </span> {{ article.title }}</p>
+  <p>작성 시간 : {{ article.created_at }}</p>
+  <hr>
+  {% if article.image %}
+    <img src="{{ article.image.url }}" alt="{{ article.image_description }}">
+  {% else %}  
+  <img src="{% static 'assets/noimage.png' %}" alt="noimage" style="max-width: 200px; max-height:200px;">
+  {% endif %}
+  <p>{{ article.content }}</p>
+  <hr>
+  <a href="{% url 'articles:update' article.pk %}">[UPDATE]</a>
+  <form action="{% url 'articles:delete' article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="DELETE">
+  </form>
+  <a href="{% url 'articles:index' %}">[BACK]</a>
+{% endblock content %}
+
