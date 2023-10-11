@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>저자 목록</h1>
+  {% for author in authors %}
+    <p>
+      <a href="{% url "libraries:detail" author.pk %}">
+        {{ author.name }}
+      </a>
+    </p>
+    <p>저작: {{ author.book_set.all|length }}권</p>
+  {% endfor %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>저자 상세 정보</h1>
+  <h3>{{ author.name }}</h3>
+  <p>나이: {{ author.age }}</p>
+  <p>생일: {{ author.birth }}</p>
+  <p>국적: {{ author.nationality }}</p>
+  <hr>
+  <h4>저작</h4>
+  {% for book in books %}
+  <p>{{ book.title }}</p>
+  {% endfor %}
+  <hr>
+  <h4>책 정보 생성</h4>
+  <form action="{% url "libraries:create_book" author.pk %}" method="POST">
+    {% csrf_token %}
+    {{ book_form.as_p }}
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url "libraries:index" %}">뒤로가기</a>
+</body>
+</html>
