@@ -70,6 +70,7 @@ def update(request, pk):
     }
     return render(request, 'articles/update.html', context)
 
+
 @login_required
 def comments_create(request, pk):
     article = Article.objects.get(pk=pk)
