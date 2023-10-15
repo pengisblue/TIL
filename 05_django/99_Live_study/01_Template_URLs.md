@@ -90,8 +90,8 @@ urlpatterns = [
 > URL 일부에 변수를 포함시키는 것 (변수는 view 함수의 인자로 전달할 수 있음)
 ```python
 # <path_converter:variable_name>
-path('article/<int:num>/', views.detail)
-path('article/<str:name>/', views.greeting)
+path('article/<int:num>/', views.detail),
+path('article/<str:name>/', views.greeting),
 ```
 - Path converter
 > URL 변수의 타입을 지정 (str, int 등 5가지 타입을 지원)
@@ -104,30 +104,30 @@ from apps import views
 from second_apps import views as second_views
 
 urlpatterns = [
-    path('index/', views.index)
-    path('index/', second_views.index)
+    path('index/', views.index),
+    path('index/', second_views.index),
 ]
 ```
 ```python
 # after
 # project/urls.py
 
-path('apps/', include('apps.urls'))
-path('second_apps/', include('second_apps.urls'))
+path('apps/', include('apps.urls')),
+path('second_apps/', include('second_apps.urls')),
 
 # apps/urls.py  <- 새로 만들어서 apps별로 관리
 from django.urls import path
 from . import views     # 현재 app의 view를 import
 
 urlpatterns = [
-    path('index/', views.index)
+    path('index/', views.index),
 ]
 ```
 #### Naming URL patterns
 > URL에 이름을 지정하는 것 (path함수의 name인자를 정의해서 사용)
 ```python
 urlpatterns = [
-    path('index/', views.index, name='index')
+    path('index/', views.index, name='index'),
 ]
 ```
 ```html
@@ -153,7 +153,7 @@ urlpatterns = [
 
 app_name = 'myapps'
 urlpatterns = [
-    path('index/', views.index, name='index')
+    path('index/', views.index, name='index'),
 ]
 ```
 ```html
