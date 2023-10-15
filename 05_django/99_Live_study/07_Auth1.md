@@ -127,7 +127,7 @@ from .models import User
 admin.site.register(User, UserAdmin)
 ```
 
-- 사용 User 테이블 변화
+- 사용 User 테이블 변화<br>
 ![Alt text](user.png)
 
 #### `주의`
