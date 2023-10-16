@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>INDEX</h1>
+  {% if request.user.is_authenticated %}
+    <h3>{{ user.username }}님 안녕하세요!</h3>
+    <form action="{% url "accounts:logout" %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="LOGOUT">
+    </form>
+    <form action="{% url "accounts:delete" %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴">
+    </form>
+    <a href="{% url "accounts:update" %}">회원정보수정</a>
+  {% else %}
+    <a href="{% url "accounts:login" %}">LOGIN</a>
+    <a href="{% url "accounts:signup" %}">SIGNUP</a>
+  {% endif %}
+
+  <hr>
+  
+  <a href="{% url 'articles:create' %}">CREATE</a>
+  <hr>
+  {% for article in articles %}
+    <p>작성자 : {{ article.user }}</p>
+    <p>글 번호 : {{ article.pk }}</p>
+    <a href="{% url "articles:detail" article.pk %}">
+      <p>글 제목 : {{ article.title }}</p>
+    </a>
+    <p>글 내용 : {{ article.content }}</p>
+    <form action="{% url "articles:likes" article.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in article.like_users.all %}
+        <input type="submit" value="좋아요 취소">
+      {% else %}
+        <input type="submit" value="좋아요">
+      {% endif %}
+    </form>
+    <hr>
+  {% endfor %}
+</body>
+</html>
