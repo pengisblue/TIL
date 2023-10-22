@@ -30,6 +30,8 @@ SELECT
   Name, Milliseconds / 60000 AS '재생 시간(분)'
 FROM
   tracks;
+
+
 -- 02. Sorting data
 -- 테이블 employees에서 FirstName 필드의 모든 데이터를 오름차순으로 조회
 SELECT
@@ -68,6 +70,7 @@ ORDER BY
   Milliseconds DESC;
 
 -- NULL 정렬 예시
+-- NULL 값이 존재할 경우 오름차순 정렬 시 가장 먼저 출력
 SELECT
   ReportsTo
 FROM
@@ -75,8 +78,9 @@ FROM
 ORDER BY
   ReportsTo;
 
+
 -- 03. Filtering data
--- 테이블 customers에서 Country 필드의 모든 데이터를 오름차순 조회
+-- 테이블 customers에서 Country 필드의 모든 데이터를 중복 없이 오름차순 조회
 SELECT DISTINCT
   Country
 FROM
@@ -131,7 +135,8 @@ WHERE
   -- Bytes >= 100000
   -- AND Bytes <= 500000; 이렇게도 표현 가능
 
--- 테이블 tracks에서 Bytes 필드 값이 100000이상 500000이하인 데이터의 Name, Bytes을 Bytes를 기준으로 오름차순 조회
+-- 테이블 tracks에서 Bytes 필드 값이 100000이상 500000이하인 데이터의 Name, Bytes을 
+-- Bytes를 기준으로 오름차순 조회
 SELECT
   Name, Bytes
 FROM

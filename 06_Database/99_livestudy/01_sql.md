@@ -1,25 +1,30 @@
 # 10/10 강의
 ## Database
-### 파일을 이용한 데이터 관리
+#### 파일을 이용한 데이터 관리
 
-### 스프레드 시트를 이용한 데이터 관리
+#### 스프레드 시트를 이용한 데이터 관리
 
+## Relational Database
 ### 데이터베이스 역할
-- 데이터를 `저장`(구조적)
+- 데이터를 (구조적)`저장`하고 조작
 
 ### 관계형 데이터베이스
 - 데이터 간에 `관계`가 있는 데이터 모음
 - 테이블, 행, 열의 정보를 구조화하는 방식
 - 서로 관련된 데이터 포인터를 저장하고 이에 대한 액세스를 제공
-    - 관계로 인해 두 테이블을 사양하여 데이터를 다양한 형식으로 조회할 수 있음 (데이터의 논리적 조작)
+    - 관계로 인해 두 테이블을 사용하여 데이터를 다양한 형식으로 조회할 수 있음 (데이터의 논리적 조작)
 - 고객 데이터 간 비교
     - 각 데이터에 고유한 식별 값 부여(Primary Key)
 
 #### 관계형 데이터베이스 관련 키워드
 1. Table (aka Relation)
+  - 데이터를 기록하는 곳
 2. Field (aka Column, Attribute)
+  - 데이터 타입이 지정됨
 3. Record (aka Row, Tuple)
+  - 데이터 값 저장
 4. Database
+  - 테이블의 집합
 5. Primary Key
     - `레코드의 식별자`
 6. Foreign Key (외래 키)
@@ -32,6 +37,7 @@
 - 사용자가 데이터 구성, 업데이트, 모니터링, 백업, 복구등을 할 수 있도록 도움
 
 ### RDBMS
+- Relational Database Management System
 
 ## SQL
 - Structure Query Language
@@ -44,14 +50,14 @@ SELECT column_name FROM table_name;
 ```
 - SQL 키워드는 대소문자를 구분하지 않음
     - 하지만 대문자로 작성하는 것을 권장 (명시적 구분)
-- rkr SQL Statements의 끝에는 세미콜론(;)이 필요
+- 각 SQL Statements의 끝에는 세미콜론(;)이 필요
     - 세미콜론은 각 SQL Statements을 구분하는 방법 (명령어의 마침표)
 
 ### 수행 목적에 따른 SQL Statements의 4가지 유형
-- DDL: 데이터의 기본 구조 및 형식 변경
+- DDL: 데이터의 기본 구조 및 형식 변경 - CREATE DROP ALTER
 - **DQL**: 데이터 검색 - SELECT
-- DML: 데이터 조작
-- DCL: 데이터 및 작업에 대한 사용자 권한 제어
+- DML: 데이터 조작 - INSERT UPDATE DELETE
+- DCL: 데이터 및 작업에 대한 사용자 권한 제어 - COMMIT ROLLBACK GRANT REVOKE
 
 ### SQL 표준
 - 모든 RDBMS에서 SQL 표준을 지원
@@ -91,7 +97,7 @@ ORDER BY
 - Null값이 존재할 경우 오름차순에서 Null값을 가장 먼저 정렬
 
 ## Filtering data
-### `DISTINCT` syntax
+### `DISTINCT` statement
 - 중복 제거
 ```sql
 SELECT DISTINCT
