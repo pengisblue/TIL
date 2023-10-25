@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arrow1 = function (name) {
+      return `hello, ${name}`
+    }
+
+    // 1. function 키워드 삭제 후 화살표 작성
+    const arrow2 = (name) => { return `hello, ${name}` }
+
+    // 2. 인자가 1개일 경우에만 () 생략 가능
+    const arrow3 = name => { return `hello, ${name}` }
+
+    // 3. 함수 본문이 return을 포함한 표현식 1개일 경우에 {} & return 삭제 가능
+    const arrow4 = name => `hello, ${name}`
+  </script>
+</body>
+
+</html>

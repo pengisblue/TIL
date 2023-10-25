@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const names = ['Alice', 'Bella', 'Cathy',]
+
+    // for loop
+    for (let idx = 0; idx < names.length; idx++) {
+      console.log(idx, names[idx])
+    }
+
+    // for...of
+    for (const name of names) {
+      console.log(name)
+    }
+
+    // forEach
+    names.forEach((name, idx) => {
+      console.log(idx, name)
+    })
+  </script>
+</body>
+
+</html>
