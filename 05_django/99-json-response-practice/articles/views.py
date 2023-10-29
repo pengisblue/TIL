@@ -6,8 +6,7 @@ from .models import Article
 # Create your views here.
 
 
-# @api_view(['GET'])
-@api_view()
+@api_view(['GET'])
 def article_json(request):
     articles = Article.objects.all()
     serializer = ArticleSerializer(articles, many=True)

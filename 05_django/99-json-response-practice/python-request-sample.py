@@ -9,5 +9,5 @@ result = response.json()
 
 # print(type(result))
 # pprint(result)
-# pprint(result[0])
-pprint(result[0].get('title'))
+pprint(result[0])
+# pprint(result[0].get('title'))

@@ -1,8 +1,8 @@
 # 10/10 강의
 ## Database
-#### 파일을 이용한 데이터 관리
+### 파일을 이용한 데이터 관리
 
-#### 스프레드 시트를 이용한 데이터 관리
+### 스프레드 시트를 이용한 데이터 관리
 
 ## Relational Database
 ### 데이터베이스 역할
@@ -11,7 +11,7 @@
 ### 관계형 데이터베이스
 - 데이터 간에 `관계`가 있는 데이터 모음
 - 테이블, 행, 열의 정보를 구조화하는 방식
-- 서로 관련된 데이터 포인터를 저장하고 이에 대한 액세스를 제공
+- `서로 관련된 데이터 포인터를 저장`하고 이에 대한 `액세스`를 제공
     - 관계로 인해 두 테이블을 사용하여 데이터를 다양한 형식으로 조회할 수 있음 (데이터의 논리적 조작)
 - 고객 데이터 간 비교
     - 각 데이터에 고유한 식별 값 부여(Primary Key)
@@ -33,11 +33,13 @@
     - 각 레코드에서 서로 다른 테이블 간의 `관계를 만드는 데` 사용
 
 ### DBMS
+- 데이터베이스를 관리하는 소프트웨어 프로그램
 - 데이터베이스와 사용자 간의 `인터페이스` 역할
 - 사용자가 데이터 구성, 업데이트, 모니터링, 백업, 복구등을 할 수 있도록 도움
 
 ### RDBMS
 - Relational Database Management System
+- 관계형 데이터베이스를 관리하는 소프트웨어 프로그램
 
 ## SQL
 - Structure Query Language
@@ -53,18 +55,29 @@ SELECT column_name FROM table_name;
 - 각 SQL Statements의 끝에는 세미콜론(;)이 필요
     - 세미콜론은 각 SQL Statements을 구분하는 방법 (명령어의 마침표)
 
-### 수행 목적에 따른 SQL Statements의 4가지 유형
-- DDL: 데이터의 기본 구조 및 형식 변경 - CREATE DROP ALTER
-- **DQL**: 데이터 검색 - SELECT
-- DML: 데이터 조작 - INSERT UPDATE DELETE
-- DCL: 데이터 및 작업에 대한 사용자 권한 제어 - COMMIT ROLLBACK GRANT REVOKE
+### SQL Statements
+- SQL을 구성하는 가장 기본적인 코드 블록
+
+#### 수행 목적에 따른 SQL Statements의 4가지 유형
+|유형|역할|SQL키워드|
+|:--:|:--:|:--:|
+|DDL<br>(Data Definition Language)|데이터의 기본 구조 및 형식 변경|CREATE DROP ALTER|
+|**DQL**<br>(Data Query Language)|데이터 검색|SELECT|
+|DML<br>(Data Manipulation Language)|데이터 조작 (추가, 수정, 삭제)|INSERT UPDATE DELETE|
+|DCL<br>(Data Control Language)|데이터 및 작업에 대한 사용자 권한 제어|COMMIT ROLLBACK GRANT REVOKE|
+
+## 참고
+### Query
+- 데이터베이스로부터 정보를 요청 하는 것
+- 일반적으로 SQL로 작성하는 코드를 쿼리문이라함
 
 ### SQL 표준
 - 모든 RDBMS에서 SQL 표준을 지원
 - 독자적 문법이 존재할 수 있음
 
-## Querying data
+## Querying data (DQL)
 ### `SELECT` statement
+- 테이블에서 데이터를 조회
 ```sql
 SELECT
   select_list
