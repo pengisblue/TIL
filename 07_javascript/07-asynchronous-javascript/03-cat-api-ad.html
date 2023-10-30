@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>냥냥펀치</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const URL = 'https://api.thecatapi.com/v1/images/search'
+    const btn = document.querySelector('button')
+
+    const getCats = function() {
+      axios({
+        mehtod: 'get',
+        url: URL
+      })
+        .then((response) => {
+          // console.log(response)
+          // console.log(response.data)
+          // console.log(response.data[0].url)
+          // 응답으로부터 필요한 img url만 구하기
+          const imgUrl = response.data[0].url
+          return imgUrl
+        })
+        // 첫번째 then 콜백함수의 반환 값이 인자로 전달됨
+        .then((imgUrl) => {
+          const imgTag = document.createElement('img')
+          imgTag.setAttribute('src', imgUrl)
+          document.body.appendChild(imgTag)
+        })
+        .catch((error) => {
+          console.log(error)
+        })  
+
+    }
+
+    btn.addEventListener('click', getCats)
+
+  </script>
+</body>
+
+</html>

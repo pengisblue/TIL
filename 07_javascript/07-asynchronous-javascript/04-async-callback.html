@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const asyncTask = function (callBack) {
+      setTimeout(function () {
+        console.log('비동기 작업 완료')
+        callBack()
+      }, 3000)
+    }
+
+    asyncTask(function () {
+      console.log('작업 완료 후 콜백 실행')
+    })
+  </script>
+</body>
+
+</html>
