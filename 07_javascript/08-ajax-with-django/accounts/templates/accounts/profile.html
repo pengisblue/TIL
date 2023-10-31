@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{ person.username }}님의 프로필</h1>
+
+  <div>
+    <div>
+      팔로잉 : <span id="followings-count">{{ person.followings.all|length }}</span> / 
+      팔로워 : <span id="followers-count">{{ person.followers.all|length }}</span>
+    </div>
+    {% if request.user != person and request.user.is_authenticated %}
+      <div>
+        <form id="follow-form" data-user-id="{{ person.pk }}">
+          {% csrf_token %}
+          {% if request.user in person.followers.all %}
+            <input type="submit" value="Unfollow">
+          {% else %}
+            <input type="submit" value="Follow">
+          {% endif %}
+        </form>
+      </div>
+    {% endif %}
+  </div>
+
+  <hr>
+
+  <h2>작성한 게시글</h2>
+  {% for article in person.article_set.all %}
+    <p>{{ article.title }}</p>
+  {% endfor %}
+
+  <hr>
+
+  <h2>작성한 댓글</h2>
+  {% for comment in person.comment_set.all %}
+    <p>{{ comment.content }}</p>
+  {% endfor %}
+
+  <hr>
+
+  <h2>좋아요를 누른 게시글</h2>
+  {% for article in person.like_articles.all %}
+    <p>{{ article.title }}</p>
+  {% endfor %}
+
+  <hr>
+
+  <a href="{% url "articles:index" %}">[back]</a>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // 1. form 요소 선택
+    const fomrTag = document.querySelector('#follow-form')
+    // 6. csrf value 선택
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    // 2. form 요소에 이벤트 리스너 부착
+    fomrTag.addEventListener('submit', function () {
+      // 3. submit 이벤트 기본동작 취소
+      event.preventDefault()
+      // 5. form 요소에 지정한 data 속성 접근하기
+      const userId = (fomrTag.dataset.userId)
+      
+      // 4. axios로 비동기적으로 팔로우/언팔로우를 요청
+      axios({
+        url: `/accounts/${userId}/follow/`,
+        method: 'post',
+        headers: {'X-CSRFToken': csrftoken},
+      })
+        .then((response) => {
+          console.log(response.data)
+          // 7. Django에서 보낸 follow 여부를 알 수 있는 변수를 저장
+          const isFollowed = response.data.is_followed
+          // 8. 팔로우 버튼 조작
+          const followBtn = document.querySelector('#follow-form > input[type=submit]:nth-child(2)')
+          // 9. 팔로우 버튼 토글
+          if (isFollowed === true) {
+            followBtn.value = 'Unfollow'
+          } else {
+            followBtn.value = 'Follow'
+          }
+
+          // 10. 팔로워 / 팔로잉 수 처리
+          const followingsCountTag = document.querySelector('#followings-count')
+          const followersCountTag = document.querySelector('#followers-count')
+
+          followingsCountTag.textContent = response.data.followings_count
+          followersCountTag.textContent = response.data.followers_count
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    })
+  </script>
+</body>
+</html>
