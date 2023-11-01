@@ -10,6 +10,13 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
+    // Promise 객체 예시
+    const promiseObj = axios({
+      method: 'get',
+      url: 'https://api.thecatapi.com/v1/images/search/'
+    })
+
+    console.log(promiseObj)
   </script>
 </body>
 
