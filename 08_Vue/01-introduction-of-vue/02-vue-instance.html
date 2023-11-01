@@ -8,7 +8,33 @@
 </head>
 
 <body>
-  <script></script>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <!-- unwrapped되어서 .value로 접근X -->
+    <h1>{{ message.value }}</h1>  
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    // createApp은 객체를 가짐
+    const app = createApp({
+      setup() {
+        // ref()를 사용해야 반응형 데이터가 됨
+        const message = ref('hello vue!')
+        // value값이 ref()안에 작성한 값이지만 템플릿에서는 automatically unwrapped
+        console.log(message)  // ref 객체
+        console.log(message.value)  //hello veu!
+        // setup()은 객체를 리턴
+        return {
+          message,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
 </body>
 
 </html>

@@ -8,7 +8,30 @@
 </head>
 
 <body>
-  <script></script>
+  <div id="app">
+    <button v-on:click="increment">{{ count }}</button>
+    <button @click="increment">{{ count }}</button>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const count = ref(0)
+        const increment = function () {
+          count.value++   // count는 ref 객체 -> value값에 접근 
+        }
+        return {
+          count,
+          increment,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
 </body>
 
 </html>

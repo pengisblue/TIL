@@ -9,13 +9,33 @@
 
 <body>
   <div id="app">
-    <p>반응성 변수: </p>
-    <p>일반 변수: </p>
-    <button>값 업데이트</button>
+    <p>반응성 변수: {{ reactiveValue }}</p>
+    <p>일반 변수: {{ normalValue }}</p>
+    <button @click="increment">값 업데이트</button>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const reactiveValue = ref(0)
+        let normalValue = 0
+        const increment = function () {
+          reactiveValue.value++
+          normalValue++
+          console.log(normalValue)
+        }
+        return {
+          reactiveValue,
+          normalValue,
+          increment,
+        }
+      }
+    })
+
+    app.mount('#app')
   </script>
 </body>
 

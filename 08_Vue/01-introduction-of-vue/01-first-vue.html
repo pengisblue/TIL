@@ -8,7 +8,32 @@
 </head>
 
 <body>
-  <script></script>
+  <div id="app">
+    <h1>{{ greeting }}</h1>
+    <button @click="count++">{{ count }}</button>
+    <p>{{ count }}</p>
+    <h3>{{ count }}</h3>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      // setup: function() {
+      setup() {
+        const count = ref(0)
+        const greeting = ref('Hello')
+        return {
+          count,
+          greeting,
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
 </body>
 
 </html>
