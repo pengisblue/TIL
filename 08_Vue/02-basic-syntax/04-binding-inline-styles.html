@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Binding to Objects -->
+    <div :style="{ color: activeColor, fontSize: fontSize + 'px'}">Text</div>
+    <!--결과는 같지만 카멜케이스 권장-->
+    <div :style="{ 'font-size': fontSize + 'px'}">Text</div>
+    <div :style="styleObj">Text</div>
+
+    <!-- Binding to Arrays -->
+    <div :style="[styleObj, styleObj2]">Text</div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const activeColor = ref('crimson')
+        const fontSize = ref(50)
+        const styleObj = ref({
+          color: activeColor,
+          fontSize: fontSize.value + 'px'
+        })
+        const styleObj2 = ref({
+          color: 'blue',
+          border: '1px solid black'
+        })
+        return {
+          activeColor,
+          fontSize,
+          styleObj,
+          styleObj2
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

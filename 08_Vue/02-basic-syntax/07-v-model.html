@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- single checkbox -->
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+
+    <!-- multiple checkbox -->
+    <div>Checked names: {{ checkedNames }}</div>
+
+    <input type="checkbox" id="alice" value="Alice" v-model="checkedNames">
+    <label for="alice">Alice</label>
+
+    <input type="checkbox" id="bella" value="Bella" v-model="checkedNames">
+    <label for="bella">Bella</label>
+
+    <!-- single select -->
+    <div>Selected: {{ selected }}</div>
+
+    <select v-model="selected">
+      <option disabled value="">Please select one</option>
+      <option>Alice</option>
+      <option>Bella</option>
+      <option>Cathy</option>
+    </select>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const checked = ref(false)
+        const checkedNames = ref([])
+        const selected = ref('')
+        return {
+          checked,
+          checkedNames,
+          selected
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

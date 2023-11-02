@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Inline Handlers -->
+    <button v-on:click="count++">Add 1</button>
+    <p>Count: {{ count }}</p>
+
+    <!-- Method Handlers -->
+    <button @click="myFunc">Hello</button>
+
+    <!-- Calling Methods in Inline Handlers -->
+    <button @click="greeting('hello')">Say hello</button>
+    <button @click="greeting('bye')">Say bye</button>
+
+    <!-- Accessing Event Argument in Inline Handlers -->
+    <button @click="warning('경고', $event)">Submit</button>
+
+    <!-- event modifiers -->
+    <form @submit.prevent="onSubmit">
+      <input type="submit">
+    </form>
+    <a @click.stop.prevent="onLink">Link</a>
+
+    <!-- key modifiers -->
+    <input type="text" @keyup.enter="onSubmit">
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const count = ref(0)
+        const name = ref('Alice')
+        const myFunc = function (event) {
+          console.log(event)
+          console.log(event.currentTarget)
+          console.log(`hello, ${name.value}`)
+        }
+        const greeting = function (message) {
+          console.log(message)
+        }
+        const warning = function (message, event) {
+          console.log(message)
+          console.log(event)
+        }
+        const onSubmit = function (event) {
+          console.log(event)
+        }
+        return {
+          count,
+          name,
+          myFunc,
+          greeting,
+          warning,
+          onSubmit
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <img v-bind:src="imageSrc" alt="#">
+    <a v-bind:href="myUrl">Link</a>
+    
+    <img :src="imageSrc" alt="#">
+    <a :href="myUrl">Link</a>
+
+    <p :[dynamicattr]="dynamicValue">...</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const imageSrc = ref('https://picsum.photos/200/')
+        const myUrl = ref('https://www.google.co.kr/')
+        const dynamicattr = ref('title')
+        const dynamicValue = ref('Hello')
+        return {
+          imageSrc,
+          myUrl,
+          dynamicattr,
+          dynamicValue,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
