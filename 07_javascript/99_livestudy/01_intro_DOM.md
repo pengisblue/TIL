@@ -50,10 +50,18 @@
 
 ## DOM 조작
 ### 속성(attribute) 조작
-#### 클래스 속성 조작
+#### 클래스 속성 조작 ('classList' property)
 - 요소의 클래스 목록을 DOMTokenList 형태로 반환
-```
-'classList' property
+```json
+// 지정한 클래스 값을 추가
+element.classList.add()
+
+// 지정한 클래스 값을 제거
+element.classList.remove()
+
+// 클래스가 존재한다면 제거하고 false 반환
+// 존재하지 않으면 클래스를 추가하고 true 반환
+element.classList.toggle()
 ```
 
 #### 일반 속성 조작
