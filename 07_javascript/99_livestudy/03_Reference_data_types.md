@@ -332,6 +332,108 @@ console.log(bag) // {연필: 5, myproperty: 'value'}
 
 #### 4. 구조 분해 할당 (destructing assignment)
 - 배열 또는 객체를 분해하여 속성을 변수에 쉽게 할당할 수 있는 문법
+```javascript
+const userInfo = {
+  firstName: 'Alice',
+  userId: 'alice123',
+  email: 'alice123@gmail.com'
+}
+```
+```javascript
+// 이렇게 나타낼 거를
+// const firstName = userInfo.firstName
+// const userId = userInfo.userId
+// const email = userInfo.email
+
+// 이렇게 표현
+const { firstName, userId, email } = userInfo
+```
+```javascript
+// 함수 매개변수에 활용
+function printInfo({ name, age, city }) {
+  console.log(`이름: ${name}, 나이: ${age}, 도시: ${city}`)
+}
+
+const person = {
+  name: 'Bob',
+  age: 35,
+  city: 'London',
+}
+
+// 함수 호출 시 객체를 구조 분해하여 함수의 매개변수로 전달
+printInfo(person) // '이름: Bob, 나이: 35, 도시: London'
+```
+#### 5. Object, 전개구문
+- 객체 복사 (객체 내부에서 객체 전개)
+- 얕은 복사
+```javascript
+// with 전개 구문
+const obj = { b: 2, c: 3, d: 4 }
+const newObj = { a: 1, ...obj, e: 5 }
+
+console.log(newObj) // {a: 1, b: 2, c: 3, d: 4, e: 5}
+```
+
+#### 6. 유용한 객체 메서드
+- Object.keys(), Object.values()
+```javascript
+const profile = {
+  name: 'Alice',
+  age: 30,
+}
+
+console.log(Object.keys(profile)) // ['name', 'age']
+console.log(Object.values(profile)) // ['Alice', 30]
+```
+
+#### 7. Optional chaining ('?.')
+- 속성이 없는 중첩 객체에 에러 없이 접근
+- 참조 대상이 null 또는 undefined일 때 평가를 멈추고 undefined를 반환(에러 X)
+- 장점
+    - 참조가 누락될 가능성이 있는 경우, 연결된 속성 접근 시 더 짧고 간단한 표현식 작성 가능
+    - 객체의 내용을 보다 편리하게 탐색가능
+- 주의사항
+    - 존재하지 않아도 괜찮은 대상에만 사용 (남용 X)
+    - Optional chaining 앞의 변수는 반드시 선언되어 있어야함
+```javascript
+const user = {
+  name: 'Alice',
+  greeting: function () {
+    return 'hello'
+  }
+}
+```
+```javascript
+console.log(user.address.street)  // Uncaught TypeError
+console.log(user.address && user.address.street)  // undefinend
+console.log(user.address?.street) // undefined
+
+console.log(user.nonMethod())   // Uncaught TypeError
+console.log(user.nonMethod?.()) // undefined
+```
+
+### JSON
+- JavaScript Object Notation
+- key-value 형태로 이루어진 자료 표기법
+- JavaScript Object와 유사한 구조를 가지고 있지만, 형식이 있는 `문자열`
+- JavaScript에서 JSON을 사용하기 위해서는 Object 자료형으로 변환 필요
+    - JSON.parse(jsonObj), JSON.strigify(jsObj)
+```javascript
+const jsObject = {
+  coffee: 'Americano',
+  iceCream: 'Cookie and cream',
+}
+
+// Object -> JSON
+const objToJson = JSON.stringify(jsObject)
+console.log(objToJson)  // {"coffee":"Americano","iceCream":"Cookie and cream"}
+console.log(typeof objToJson)  // string
+
+// JSON -> Object
+const jsonToObj = JSON.parse(objToJson)
+console.log(jsonToObj)  // { coffee: 'Americano', iceCream: 'Cookie and cream' }
+console.log(typeof jsonToObj)  // object
+```
 
 ## 배열
 - Object : 키로 구분된 데이터 집합을 저장하는 자료형
