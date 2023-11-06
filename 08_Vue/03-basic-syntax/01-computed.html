@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>남은 할 일</h2>
+    <p>{{ restOfTodos }}</p>
+    <p>{{ getRestOfTodos() }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, computed } = Vue
+
+    const app = createApp({
+      setup() {
+        const todos = ref([
+          { text: 'Vue 실습' },
+          { text: '자격증 공부' },
+          { text: 'TIL 작성' }
+        ])
+
+        const restOfTodos = computed(() => {
+          return todos.value.length > 0 ? '아직 남았다' : '퇴근'
+        })
+        
+        const getRestOfTodos = function () {
+          return todos.value.length > 0 ? '아직 남았다' : '퇴근'
+        }
+
+        return {
+          todos,
+          restOfTodos,
+          getRestOfTodos,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

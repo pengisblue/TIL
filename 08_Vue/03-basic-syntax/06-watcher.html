@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1 -->
+    <button @click="count++">Add 1</button>
+    <p>Count: {{ count }}</p>
+
+    <!-- 2 -->
+    <input v-model="message">
+    <p>Message length: {{ messageLength }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, watch } = Vue
+
+    const app = createApp({
+      setup() {
+        const count = ref(0)
+        const message = ref('')
+        const messageLength = ref(0)
+
+        const countWatch = watch(count, (newValue, oldValue) => {
+          console.log(`newValue: ${newValue}, oldValue: ${oldValue}`)
+        })
+
+        const messageWatch = watch(message, (newValue, oldValue) => {
+          messageLength.value = newValue.length
+        })
+
+        return {
+          count,
+          message,
+          messageLength
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

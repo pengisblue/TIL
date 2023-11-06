@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1. computed -->
+    <ul>
+      <li>
+      </li>
+    </ul>
+
+    <hr>
+
+    <!-- 2. method (computed가 불가능한 중첩된 v-for) -->
+    <ul>
+      <li>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const numbers = ref([1, 2, 3, 4, 5])
+        const numberSets = ref([
+          [1, 2, 3, 4, 5],
+          [6, 7, 8, 9, 10],
+        ])
+
+        return {
+          numberSets,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

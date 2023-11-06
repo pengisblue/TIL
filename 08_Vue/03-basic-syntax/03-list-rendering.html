@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div v-for="(item, index) in myArr">
+      {{ index }} // {{ item.name }}
+    </div>
+
+    <div v-for="(value, key, index) in myObj">
+      {{ index }} / {{ key }} / {{ value }}
+    </div>
+
+    <!-- v-for on <template> -->
+    <ul>
+      <template v-for="item in myArr">
+        <li>{{ item.name }}</li>
+        <li>{{ item.age }}</li>
+        <hr>
+      </template>
+    </ul>
+
+    <!-- nested v-for -->
+    <ul v-for="item in myInfo">
+      <li v-for="freind in item.friends">
+        {{ item.name }} - {{ freind }}
+      </li>
+    </ul>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const myArr = ref([
+          { name: 'Alice', age: 20 },
+          { name: 'Bella', age: 21 }
+        ])
+        const myObj = ref({
+          name: 'Cathy',
+          age: 30
+        })
+
+        // nested v-for
+        const myInfo = ref([
+          { name: 'Alice', age: 20, friends: ['Bella', 'Cathy', 'Dan'] },
+          { name: 'Bella', age: 21, friends: ['Alice', 'Cathy'] }
+        ])
+
+        return {
+          myArr,
+          myObj,
+          myInfo
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- [Bad] v-for with v-if -->
+    <!-- <ul>
+      <li v-for="todo in todos" v-if="!todo.isComplete" :key="todo.id">
+        {{ todo.name }}
+      </li>
+    </ul> -->
+
+    <!-- [Good] v-for with v-if & computed-->
+    <ul>
+      <li v-for="todo in completeTodos" :key="todo.id">
+        {{ todo.name }}
+      </li>
+    </ul>
+
+    <!-- [Good] v-for with v-if & template-->
+    <ul>
+      <template v-for="todo in todos" :key="todo.id">
+        <li v-if="!todo.isComplete">
+          {{ todo.name }}
+        </li>
+      </template>
+    </ul>
+
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, computed } = Vue
+
+    const app = createApp({
+      setup() {
+        let id = 0
+
+        const todos = ref([
+          { id: id++, name: '복습', isComplete: true },
+          { id: id++, name: '예습', isComplete: false },
+          { id: id++, name: '저녁식사', isComplete: true },
+          { id: id++, name: '노래방', isComplete: false }
+        ])
+
+        const completeTodos = computed(() => {
+          return todos.value.filter((todo) => !todo.isComplete)
+        })
+
+        return {
+          todos,
+          completeTodos
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
