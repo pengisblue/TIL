@@ -14,6 +14,7 @@ def index(request):
 
 def detail(request, pk):
     article = Article.objects.get(pk=pk)
+    print(type(article.image))
     context = {
         'article': article,
     }
