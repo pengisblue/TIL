@@ -16,6 +16,7 @@ function HomPage() {
       <p>
         <button onClick={navigateHandler}>Navigate</button>
       </p>
+      <Link to={"products/p1"}>??</Link>
     </>
   );
 }

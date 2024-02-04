@@ -82,17 +82,17 @@ export default function RootLayout() {
 ```
 
 ## NavLink
+
 ```js
 import { NavLink } from "react-router-dom";
 ```
+
 ```js
 // isActive를 통해서 현재 라우터와 링크가 일치하는지 확인할 수 있다.
 // end는 path 중복을 방지하기위해 더이상 이어지는 링크가 없음을 표시
 <NavLink
   to="/"
-  className={({ isActive }) =>
-    isActive ? classes.active : undefined
-  }
+  className={({ isActive }) => (isActive ? classes.active : undefined)}
   end
 >
   Home
@@ -100,7 +100,9 @@ import { NavLink } from "react-router-dom";
 ```
 
 ## useNavigate
+
 - Link를 이용하지 않고 라우터 이동시키기
+
 ```js
 import { useNavigate } from "react-router-dom";
 
@@ -122,5 +124,74 @@ function HomPage() {
 }
 
 export default HomPage;
+```
 
+## 동적 라우트
+
+```js
+// ':'뒤에 변수명을 적어준다
+{ path: "/products/:productId", element: <ProductDetailPage /> },
+```
+
+```js
+// 할당은 `${}`에 변수를 넣어줄 수 있다
+<li key={product.id}>
+  <Link to={`/products/${product.id}`}>{product.title}</Link>
+</li>
+```
+
+## 상대경로와 절대경로
+
+```js
+// 절대 경로
+{
+  path: "/",
+  element: <RootLayout />,
+  children: [
+    { path: "/", element: <HomPage /> },
+    { path: "/products", element: <ProductsPage /> },
+    { path: "/products/:productId", element: <ProductDetailPage /> },
+  ],
+},
+```
+
+```js
+// 상대 경로
+// 맨 앞의 '/'가 절대 경로를 의미한다
+{
+  path: "/",
+  element: <RootLayout />,
+  children: [
+    { path: "", element: <HomPage /> },
+    { path: "products", element: <ProductsPage /> },
+    { path: "products/:productId", element: <ProductDetailPage /> },
+  ],
+},
+```
+
+### Link 상대경로
+
+```js
+<li key={product.id}>
+  <Link to={product.id}>{product.title}</Link>
+  {/* 상대경로로 작성되어 '/products/:productID'로 이동한다 */}
+</li>
+```
+### 상위 경로로 이동
+```js
+// '..'은 상위 경로로 이동한다는 의미
+
+<Link to={'..'} relative="router">back</Link>
+// router에 정의된 부모 경로로 이동한다
+// '/'로 이동
+
+<Link to={'..'} relative="path">back</Link>
+// 이전 경로로 이동한다
+// '/products/:productsId'에서 '/products'로 한 단계 상위 이동
+```
+
+## index 라우트
+```js
+// '/'빈 경로일 경우에 index로 표시할 수도 있다.
+{ index: true, element: <HomPage /> },
 ```
