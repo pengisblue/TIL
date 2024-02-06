@@ -140,6 +140,23 @@ export default HomPage;
 </li>
 ```
 
+### params 사용
+
+```js
+import { useParams } from "react-router-dom";
+
+export default function ProductDetailPage() {
+  const params = useParams();
+
+  return (
+    <>
+      <h1>Product Details</h1>
+      <p>{params.productId}</p>
+    </>
+  );
+}
+```
+
 ## 상대경로와 절대경로
 
 ```js
@@ -177,7 +194,9 @@ export default HomPage;
   {/* 상대경로로 작성되어 '/products/:productID'로 이동한다 */}
 </li>
 ```
+
 ### 상위 경로로 이동
+
 ```js
 // '..'은 상위 경로로 이동한다는 의미
 
@@ -191,6 +210,7 @@ export default HomPage;
 ```
 
 ## index 라우트
+
 ```js
 // '/'빈 경로일 경우에 index로 표시할 수도 있다.
 { index: true, element: <HomPage /> },
