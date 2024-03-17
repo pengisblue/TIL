@@ -4,7 +4,7 @@
 
 ```bash
 # vite + react
-npm vite@latest 프로젝트이름
+npm create vite@latest 프로젝트이름
 # React 선택
 
 cd 프로젝트파일
