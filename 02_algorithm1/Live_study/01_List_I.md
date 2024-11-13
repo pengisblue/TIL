@@ -85,7 +85,7 @@ def BubbleSort(a, N):
     temp = [0] * len(Data)
     for j N-1 -> 0:
         counts[Data[j]] -= 1
-        temp[counts[Jata[j]]] = Data[j]
+        temp[counts[Data[j]]] = Data[j]
     # temp = [0, 1, 1, 1, 2, 3, 4, 4]
     ```
 ```python
